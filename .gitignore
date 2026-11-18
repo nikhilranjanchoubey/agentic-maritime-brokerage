@@ -18,6 +18,10 @@ node_modules/
 dist/
 build/
 
+# Database
+*.db
+*.sqlite3
+
 # Logs
 *.log
 

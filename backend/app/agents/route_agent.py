@@ -1,21 +1,45 @@
 import pandas as pd
 import os
+from pathlib import Path
 
 
 class RouteAgent:
 
-    def __init__(self, project_root):
+    def __init__(self, project_root="."):
+        # Robustly locate routes.csv across different working directories
+        possible_paths = [
+            os.path.join(project_root, "app", "data", "routes.csv"),
+            os.path.join(os.path.dirname(__file__), "..", "data", "routes.csv"),
+            os.path.join("backend", "app", "data", "routes.csv"),
+            os.path.join(".", "app", "data", "routes.csv")
+        ]
 
-        # Location of our route dataset
-        self.dataset_path = os.path.join(
-            project_root,
-            "app",
-            "data",
-            "routes.csv"
-        )
+        self.dataset_path = None
+        for p in possible_paths:
+            if os.path.exists(p):
+                self.dataset_path = os.path.abspath(p)
+                break
 
-        # Load route dataset
-        self.routes = pd.read_csv(self.dataset_path)
+        if not self.dataset_path:
+            self.dataset_path = os.path.abspath(
+                os.path.join(project_root, "app", "data", "routes.csv")
+            )
+
+        self.reload_routes()
+
+    def reload_routes(self):
+        """Reload routes dataset from disk with automatic delimiter detection."""
+        if os.path.exists(self.dataset_path):
+            self.routes = pd.read_csv(self.dataset_path, sep=None, engine="python")
+            # Clean string columns in case of whitespace
+            for col in ["origin", "destination", "route_type", "route_id"]:
+                if col in self.routes.columns:
+                    self.routes[col] = self.routes[col].astype(str).str.strip()
+        else:
+            self.routes = pd.DataFrame(columns=[
+                "route_id", "origin", "destination", "distance_nm",
+                "transit_days", "transshipments", "route_type", "base_freight_usd"
+            ])
 
     def analyze_route(
         self,
@@ -24,19 +48,21 @@ class RouteAgent:
         cargo_type,
         containers
     ):
+        origin_clean = str(origin).strip().lower()
+        destination_clean = str(destination).strip().lower()
 
         # Step 1: Find matching routes
         matching_routes = self.routes[
-            (self.routes["origin"].str.lower() == origin.lower())
+            (self.routes["origin"].str.lower() == origin_clean)
             &
-            (self.routes["destination"].str.lower() == destination.lower())
+            (self.routes["destination"].str.lower() == destination_clean)
         ].copy()
 
         # If no route exists
         if matching_routes.empty:
             return {
                 "status": "error",
-                "message": "No route found for the given origin and destination"
+                "message": "No matching route is currently available for this port combination."
             }
 
         # Step 2: Calculate transit score
@@ -91,13 +117,13 @@ class RouteAgent:
         alternatives = []
 
         for _, route in matching_routes.iloc[1:].iterrows():
-
             alternatives.append({
-                "route_id": route["route_id"],
-                "route_type": route["route_type"],
+                "route_id": str(route["route_id"]),
+                "route_type": str(route["route_type"]),
                 "transit_days": int(route["transit_days"]),
                 "distance_nm": int(route["distance_nm"]),
                 "transshipments": int(route["transshipments"]),
+                "base_freight_usd": float(route["base_freight_usd"]) if "base_freight_usd" in route else 0.0,
                 "route_score": round(
                     float(route["route_score"]),
                     2
@@ -105,32 +131,37 @@ class RouteAgent:
             })
 
         # Step 9: Return recommendation
+        base_freight = float(best_route["base_freight_usd"])
+        total_freight = round(base_freight * max(1, int(containers)), 2)
+
         return {
             "status": "success",
             "origin": origin,
             "destination": destination,
             "cargo_type": cargo_type,
-            "containers": containers,
+            "containers": int(containers),
 
             "recommended_route": {
-                "route_id": best_route["route_id"],
-                "route_type": best_route["route_type"],
+                "route_id": str(best_route["route_id"]),
+                "route_type": str(best_route["route_type"]),
                 "transit_days": int(best_route["transit_days"]),
                 "distance_nm": int(best_route["distance_nm"]),
                 "transshipments": int(best_route["transshipments"]),
-                "base_freight_usd": float(
-                    best_route["base_freight_usd"]
-                ),
+                "base_freight_usd": base_freight,
+                "total_freight_usd": total_freight,
                 "route_score": round(
                     float(best_route["route_score"]),
                     2
-                )
+                ),
+                "transit_score": round(float(best_route["transit_score"]), 2),
+                "distance_score": round(float(best_route["distance_score"]), 2),
+                "transshipment_score": round(float(best_route["transshipment_score"]), 2)
             },
 
             "alternative_routes": alternatives,
 
             "reason": (
-                "Route recommended based on weighted transit, "
-                "distance and transshipment scores."
+                "Route recommended based on weighted transit (40%), "
+                "distance (25%) and transshipment (35%) scores."
             )
         }

@@ -1,122 +1,231 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { fetchPorts, fetchPopularRoutes } from './services/api';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import SearchCard from './components/SearchCard';
+import RouteResults from './components/RouteResults';
+import PopularRoutes from './components/PopularRoutes';
+import Features from './components/Features';
+import HowItWorks from './components/HowItWorks';
+import Services from './components/Services';
+import Footer from './components/Footer';
+import AuthModal from './components/AuthModal';
+import UserDashboard from './components/UserDashboard';
+import AdminDashboard from './components/AdminDashboard';
+import { ShieldCheckIcon } from './components/Icons';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+function MainApp() {
+  const { user, isAuthenticated, isAdmin } = useAuth();
+  const [currentView, setCurrentView] = useState('main'); // 'main' or 'dashboard'
+  const [ports, setPorts] = useState([]);
+  const [popularRoutes, setPopularRoutes] = useState([]);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState('login');
+  const [searchResult, setSearchResult] = useState(null);
+  const [prefill, setPrefill] = useState({ origin: '', destination: '' });
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+  // Load ports and popular corridors on mount
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const [portsData, popularData] = await Promise.all([
+          fetchPorts(),
+          fetchPopularRoutes(),
+        ]);
+        setPorts(portsData);
+        setPopularRoutes(popularData);
+      } catch (err) {
+        console.error('Error initializing platform data:', err);
+      }
+    }
+    loadData();
+  }, []);
+
+  const handleOpenAuth = (mode = 'login') => {
+    setAuthModalMode(mode);
+    setAuthModalOpen(true);
+  };
+
+  const handleSelectCorridor = (origin, destination) => {
+    setPrefill({ origin, destination });
+    const searchEl = document.getElementById('search-section');
+    if (searchEl) {
+      searchEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleExploreHero = () => {
+    const searchEl = document.getElementById('search-section');
+    if (searchEl) {
+      searchEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleDiscoverHero = () => {
+    const featEl = document.getElementById('why-choose-us');
+    if (featEl) {
+      featEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleFooterNav = (id) => {
+    setCurrentView('main');
+    setTimeout(() => {
+      const el = document.getElementById(id === 'home' ? 'hero-top' : id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
+  // If user requests dashboard or profile but is not signed in
+  if ((currentView === 'dashboard' || currentView === 'profile') && !isAuthenticated) {
+    return (
+      <div className="auth-required-screen">
+        <div className="auth-required-card">
+          <div className="auth-req-icon-box">
+            <ShieldCheckIcon size={36} className="auth-req-icon-svg" />
+          </div>
+          <h2 className="auth-req-heading">Authentication Required</h2>
+          <p className="auth-req-desc">
+            Please sign in to access your shipment bookings and broker account.
           </p>
+          <div className="auth-req-buttons">
+            <button
+              type="button"
+              className="btn-auth-signin"
+              onClick={() => handleOpenAuth('login')}
+            >
+              Sign In Now
+            </button>
+            <button
+              type="button"
+              className="btn-auth-return"
+              onClick={() => setCurrentView('main')}
+            >
+              Return to Homepage
+            </button>
+          </div>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+        <AuthModal
+          isOpen={authModalOpen}
+          initialMode={authModalMode}
+          onClose={() => setAuthModalOpen(false)}
+          onSuccess={() => setCurrentView('dashboard')}
+        />
+      </div>
+    );
+  }
 
-      <div className="ticks"></div>
+  // Render Admin Dashboard
+  if (currentView === 'admin' && isAdmin) {
+    return (
+      <AdminDashboard
+        ports={ports}
+        onBackToHome={() => setCurrentView('main')}
+      />
+    );
+  }
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+  // Render User Dashboard (Overview / My Shipments) or Profile with SkyTech Layout
+  if (currentView === 'dashboard' || currentView === 'profile') {
+    return (
+      <div className="app-container">
+        <Navbar
+          onOpenAuth={handleOpenAuth}
+          currentView={currentView}
+          setCurrentView={setCurrentView}
+        />
+        <UserDashboard
+          ports={ports}
+          viewMode={currentView === 'profile' ? 'profile' : 'overview'}
+          onBackToHome={() => setCurrentView('main')}
+          onOpenSearch={() => {
+            setCurrentView('main');
+            setTimeout(() => {
+              const el = document.getElementById('search-section');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+          }}
+        />
+        <Footer onNavClick={handleFooterNav} />
+        <AuthModal
+          isOpen={authModalOpen}
+          initialMode={authModalMode}
+          onClose={() => setAuthModalOpen(false)}
+          onSuccess={() => setCurrentView('dashboard')}
+        />
+      </div>
+    );
+  }
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+  // Render Public Homepage
+  return (
+    <div className="app-container">
+      {/* Sticky Navigation Bar */}
+      <Navbar
+        onOpenAuth={handleOpenAuth}
+        currentView={currentView}
+        setCurrentView={setCurrentView}
+      />
+
+      {/* Hero Section with SkyTech Top Badge, Headline & Spacious 2-Row Search Card */}
+      <HeroSection>
+        <SearchCard
+          ports={ports}
+          prefillOrigin={prefill.origin}
+          prefillDestination={prefill.destination}
+          onResultsFound={(res) => setSearchResult(res)}
+        />
+      </HeroSection>
+
+      {/* Route Intelligence Results (Rendered upon search) */}
+      {searchResult && (
+        <RouteResults
+          resultState={searchResult}
+          onReset={() => setSearchResult(null)}
+          onOpenAuth={handleOpenAuth}
+        />
+      )}
+
+      {/* Popular Shipping Routes inspired by SkyTech */}
+      <PopularRoutes
+        popularRoutes={popularRoutes}
+        onSelectCorridor={handleSelectCorridor}
+      />
+
+      {/* Why Choose Us Features */}
+      <Features />
+
+      {/* How It Works Process */}
+      <HowItWorks />
+
+      {/* Specialized Maritime AI Services */}
+      <Services onExploreRoute={handleExploreHero} />
+
+      {/* Navy Maritime Footer */}
+      <Footer onNavClick={handleFooterNav} />
+
+      {/* Split-screen SkyTech Authentication Modal */}
+      <AuthModal
+        isOpen={authModalOpen}
+        initialMode={authModalMode}
+        onClose={() => setAuthModalOpen(false)}
+        onSuccess={() => {
+          setCurrentView('dashboard');
+        }}
+      />
+    </div>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AuthProvider>
+        <MainApp />
+      </AuthProvider>
+    </ThemeProvider>
+  );
+}

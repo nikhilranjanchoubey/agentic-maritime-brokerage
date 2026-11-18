@@ -1,501 +1,512 @@
 route_id	origin	destination	distance_nm	transit_days	transshipments	route_type	base_freight_usd
-R001	Chennai	Mumbai	621	4	0	Standard	756
-R002	Mumbai	Nhava Sheva	50	3	0	Alternative	726
-R003	Nhava Sheva	Kolkata	999	5	0	Alternative	870
-R004	Kolkata	Visakhapatnam	462	4	0	Standard	843
-R005	Visakhapatnam	Singapore	1753	7	0	Alternative	1027
-R006	Singapore	Port Klang	200	3	0	Alternative	883
-R007	Port Klang	Tanjung Pelepas	182	3	0	Standard	671
-R008	Tanjung Pelepas	Jakarta	549	4	0	Alternative	748
-R009	Jakarta	Laem Chabang	1351	6	0	Alternative	875
-R010	Laem Chabang	Ho Chi Minh City	413	4	0	Standard	802
-R011	Ho Chi Minh City	Manila	971	5	0	Alternative	902
-R012	Manila	Hong Kong	676	4	0	Alternative	903
-R013	Hong Kong	Yantian	50	3	0	Standard	866
-R014	Yantian	Shanghai	725	4	0	Alternative	733
-R015	Shanghai	Ningbo	92	3	0	Alternative	696
-R016	Ningbo	Qingdao	422	4	0	Standard	769
-R017	Qingdao	Busan	478	4	0	Alternative	810
-R018	Busan	Tokyo	582	4	0	Alternative	857
-R019	Tokyo	Kaohsiung	1422	6	0	Standard	989
-R020	Kaohsiung	Jebel Ali	3979	13	1	Alternative	1538
-R021	Jebel Ali	Dammam	314	3	0	Alternative	686
-R022	Dammam	Colombo	2311	9	1	Standard	1171
-R023	Colombo	Suez	3360	11	1	Alternative	1326
-R024	Suez	Rotterdam	2028	8	1	Alternative	1208
-R025	Rotterdam	Hamburg	250	3	0	Standard	819
-R026	Hamburg	Antwerp	278	3	0	Alternative	857
-R027	Antwerp	Felixstowe	137	3	0	Alternative	876
-R028	Felixstowe	Barcelona	712	4	0	Standard	732
-R029	Barcelona	Genoa	390	4	0	Alternative	730
-R030	Genoa	Piraeus	860	5	0	Alternative	819
-R031	Piraeus	Los Angeles	6729	20	1	Standard	1749
-R032	Los Angeles	Long Beach	50	3	0	Alternative	796
-R033	Long Beach	New York	2387	9	0	Alternative	1100
-R034	New York	Savannah	694	4	0	Standard	940
-R035	Savannah	Vancouver	2394	9	0	Alternative	925
-R036	Vancouver	Manzanillo	2272	8	0	Alternative	946
-R037	Manzanillo	Santos	4775	15	1	Standard	1489
-R038	Santos	Buenos Aires	1004	5	0	Alternative	870
-R039	Buenos Aires	Callao	1900	7	0	Alternative	1008
-R040	Callao	Durban	6671	20	1	Standard	1812
-R041	Durban	Cape Town	769	5	0	Alternative	948
-R042	Cape Town	Lagos	2879	10	0	Alternative	981
-R043	Lagos	Mombasa	2536	9	0	Standard	977
-R044	Mombasa	Sydney	7085	21	1	Alternative	1755
-R045	Sydney	Melbourne	431	4	0	Alternative	805
-R046	Melbourne	Auckland	1588	7	0	Standard	973
-R047	Auckland	Chennai	6815	20	1	Alternative	1829
-R048	Chennai	Nhava Sheva	616	4	0	Alternative	931
-R049	Mumbai	Kolkata	1006	5	0	Standard	766
-R050	Nhava Sheva	Visakhapatnam	661	4	0	Alternative	761
-R051	Kolkata	Singapore	1753	7	0	Alternative	922
-R052	Visakhapatnam	Port Klang	1553	7	0	Standard	934
-R053	Singapore	Tanjung Pelepas	50	3	0	Alternative	796
-R054	Port Klang	Jakarta	714	4	0	Alternative	907
-R055	Tanjung Pelepas	Laem Chabang	809	5	0	Standard	953
-R056	Jakarta	Ho Chi Minh City	1135	5	0	Alternative	781
-R057	Laem Chabang	Manila	1316	6	0	Alternative	836
-R058	Ho Chi Minh City	Hong Kong	912	5	0	Standard	825
-R059	Manila	Yantian	685	4	0	Alternative	834
-R060	Hong Kong	Shanghai	743	4	0	Alternative	875
-R061	Yantian	Ningbo	658	4	0	Standard	901
-R062	Shanghai	Qingdao	331	3	0	Alternative	898
-R063	Ningbo	Busan	552	4	0	Alternative	713
-R064	Qingdao	Tokyo	1050	5	0	Standard	806
-R065	Busan	Kaohsiung	983	5	0	Alternative	833
-R066	Tokyo	Jebel Ali	4820	15	1	Alternative	1529
-R067	Kaohsiung	Dammam	4248	14	1	Standard	1499
-R068	Jebel Ali	Colombo	2006	8	1	Alternative	1276
-R069	Dammam	Suez	1066	5	0	Alternative	983
-R070	Colombo	Rotterdam	5081	16	1	Standard	1454
-R071	Suez	Hamburg	1930	8	1	Alternative	1127
-R072	Rotterdam	Antwerp	50	3	0	Alternative	726
-R073	Hamburg	Felixstowe	367	3	0	Standard	797
-R074	Antwerp	Barcelona	669	4	0	Alternative	867
-R075	Felixstowe	Genoa	611	4	0	Alternative	895
-R076	Barcelona	Piraeus	1132	5	0	Standard	990
-R077	Genoa	Los Angeles	5939	18	1	Alternative	1553
-R078	Piraeus	Long Beach	6726	20	1	Alternative	1678
-R079	Los Angeles	New York	2390	9	0	Standard	995
-R080	Long Beach	Savannah	2087	8	0	Alternative	995
-R081	New York	Vancouver	2362	9	0	Alternative	1062
-R082	Savannah	Manzanillo	1653	7	0	Standard	1015
-R083	Vancouver	Santos	6716	20	1	Alternative	1852
-R084	Manzanillo	Buenos Aires	4651	15	1	Alternative	1405
-R085	Santos	Callao	2119	8	0	Standard	929
-R086	Buenos Aires	Durban	4918	15	1	Alternative	1506
-R087	Callao	Cape Town	5905	18	1	Alternative	1654
-R088	Durban	Lagos	3024	10	0	Standard	1138
-R089	Cape Town	Mombasa	2409	9	0	Alternative	1102
-R090	Lagos	Sydney	9384	27	2	Alternative	2379
-R091	Mombasa	Melbourne	6689	20	1	Standard	1639
-R092	Sydney	Auckland	1304	6	0	Alternative	835
-R093	Melbourne	Chennai	5315	16	1	Alternative	1551
-R094	Auckland	Mumbai	7434	22	1	Standard	1830
-R095	Chennai	Kolkata	821	5	0	Alternative	884
-R096	Mumbai	Visakhapatnam	668	4	0	Alternative	902
-R097	Nhava Sheva	Singapore	2356	9	0	Standard	1131
-R098	Kolkata	Port Klang	1567	7	0	Alternative	830
-R099	Visakhapatnam	Tanjung Pelepas	1735	7	0	Alternative	885
-R100	Singapore	Jakarta	536	4	0	Standard	782
-R101	Port Klang	Laem Chabang	679	4	0	Alternative	833
-R102	Tanjung Pelepas	Ho Chi Minh City	667	4	0	Alternative	867
-R103	Jakarta	Manila	1680	7	0	Standard	1018
-R104	Laem Chabang	Hong Kong	1052	5	0	Alternative	981
-R105	Ho Chi Minh City	Yantian	930	5	0	Alternative	757
-R106	Manila	Shanghai	1119	5	0	Standard	814
-R107	Hong Kong	Ningbo	675	4	0	Alternative	798
-R108	Yantian	Qingdao	976	5	0	Alternative	867
-R109	Shanghai	Busan	499	4	0	Standard	847
-R110	Ningbo	Tokyo	1089	5	0	Alternative	950
-R111	Qingdao	Kaohsiung	904	5	0	Alternative	964
-R112	Busan	Jebel Ali	4266	14	1	Standard	1361
-R113	Tokyo	Dammam	5022	16	1	Alternative	1483
-R114	Kaohsiung	Colombo	2821	10	0	Alternative	1044
-R115	Jebel Ali	Suez	1380	6	0	Standard	914
-R116	Dammam	Rotterdam	2862	10	1	Alternative	1339
-R117	Colombo	Hamburg	4878	15	1	Alternative	1606
-R118	Suez	Antwerp	2003	8	1	Standard	1310
-R119	Rotterdam	Felixstowe	130	3	0	Alternative	665
-R120	Hamburg	Barcelona	891	5	0	Alternative	787
-R121	Antwerp	Genoa	502	4	0	Standard	778
-R122	Felixstowe	Piraeus	1409	6	0	Alternative	917
-R123	Barcelona	Los Angeles	5855	18	1	Alternative	1683
-R124	Genoa	Long Beach	5937	18	1	Standard	1728
-R125	Piraeus	New York	4792	15	1	Alternative	1631
-R126	Los Angeles	Savannah	2091	8	0	Alternative	890
-R127	Long Beach	Vancouver	1072	5	0	Standard	808
-R128	New York	Manzanillo	2269	8	0	Alternative	981
-R129	Savannah	Santos	4380	14	1	Alternative	1479
-R130	Vancouver	Buenos Aires	6833	20	1	Standard	1796
-R131	Manzanillo	Callao	2761	10	1	Alternative	1363
-R132	Santos	Durban	4568	14	1	Alternative	1605
-R133	Buenos Aires	Cape Town	4155	13	1	Standard	1348
-R134	Callao	Lagos	5523	17	1	Alternative	1540
-R135	Durban	Mombasa	1821	7	0	Alternative	929
-R136	Cape Town	Sydney	6659	20	1	Standard	1741
-R137	Lagos	Melbourne	8954	26	1	Alternative	2040
-R138	Mombasa	Auckland	8173	24	1	Alternative	1985
-R139	Sydney	Chennai	5519	17	1	Standard	1715
-R140	Melbourne	Mumbai	5935	18	1	Alternative	1553
-R141	Auckland	Nhava Sheva	7428	22	1	Alternative	1759
-R142	Chennai	Visakhapatnam	364	3	0	Standard	762
-R143	Mumbai	Singapore	2362	9	0	Alternative	1027
-R144	Nhava Sheva	Port Klang	2156	8	0	Alternative	1038
-R145	Kolkata	Tanjung Pelepas	1738	7	0	Standard	1025
-R146	Visakhapatnam	Jakarta	2242	8	0	Alternative	1118
-R147	Singapore	Laem Chabang	819	5	0	Alternative	744
-R148	Port Klang	Ho Chi Minh City	631	4	0	Standard	758
-R149	Tanjung Pelepas	Manila	1461	6	0	Alternative	888
-R150	Jakarta	Hong Kong	1970	8	0	Alternative	982
-R151	Laem Chabang	Yantian	1067	5	0	Standard	913
-R152	Ho Chi Minh City	Shanghai	1655	7	0	Alternative	1015
-R153	Manila	Ningbo	1027	5	0	Alternative	978
-R154	Hong Kong	Qingdao	994	5	0	Standard	764
-R155	Yantian	Busan	1209	6	0	Alternative	824
-R156	Shanghai	Tokyo	1057	5	0	Alternative	842
-R157	Ningbo	Kaohsiung	493	4	0	Standard	812
-R158	Qingdao	Jebel Ali	3789	12	1	Alternative	1446
-R159	Busan	Dammam	4481	14	1	Alternative	1560
-R160	Tokyo	Colombo	4136	13	1	Standard	1556
-R161	Kaohsiung	Suez	5183	16	1	Alternative	1466
-R162	Jebel Ali	Rotterdam	3130	11	1	Alternative	1265
-R163	Dammam	Hamburg	2696	10	1	Standard	1250
-R164	Colombo	Antwerp	5078	16	1	Alternative	1559
-R165	Suez	Felixstowe	2138	8	1	Alternative	1256
-R166	Rotterdam	Barcelona	717	4	0	Standard	907
-R167	Hamburg	Genoa	617	4	0	Alternative	931
-R168	Antwerp	Piraeus	1276	6	0	Alternative	797
-R169	Felixstowe	Los Angeles	5338	16	1	Standard	1519
-R170	Barcelona	Long Beach	5853	18	1	Alternative	1613
-R171	Genoa	New York	3933	13	1	Alternative	1427
-R172	Piraeus	Savannah	5446	17	1	Standard	1636
-R173	Los Angeles	Vancouver	1073	5	0	Alternative	948
-R174	Long Beach	Manzanillo	1293	6	0	Alternative	1009
-R175	New York	Santos	4679	15	1	Standard	1408
-R176	Savannah	Buenos Aires	4708	15	1	Alternative	1446
-R177	Vancouver	Callao	4939	15	1	Alternative	1508
-R178	Manzanillo	Durban	9294	27	2	Standard	2264
-R179	Santos	Cape Town	3808	12	1	Alternative	1448
-R180	Buenos Aires	Lagos	4785	15	1	Alternative	1595
-R181	Callao	Mombasa	7743	23	1	Standard	1970
-R182	Durban	Sydney	6379	19	1	Alternative	1604
-R183	Cape Town	Melbourne	6238	19	1	Alternative	1622
-R184	Lagos	Auckland	9993	29	2	Standard	2309
-R185	Mombasa	Chennai	2945	10	1	Alternative	1314
-R186	Sydney	Mumbai	6139	18	1	Alternative	1716
-R187	Melbourne	Nhava Sheva	5930	18	1	Standard	1727
-R188	Auckland	Kolkata	6764	20	1	Alternative	1858
-R189	Chennai	Singapore	1758	7	0	Alternative	852
-R190	Mumbai	Port Klang	2162	8	0	Standard	934
-R191	Nhava Sheva	Tanjung Pelepas	2337	9	0	Alternative	989
-R192	Kolkata	Jakarta	2281	8	0	Alternative	1017
-R193	Visakhapatnam	Laem Chabang	1186	6	0	Standard	926
-R194	Singapore	Ho Chi Minh City	668	4	0	Alternative	902
-R195	Port Klang	Manila	1515	6	0	Alternative	1034
-R196	Tanjung Pelepas	Hong Kong	1571	7	0	Standard	831
-R197	Jakarta	Yantian	1988	8	0	Alternative	914
-R198	Laem Chabang	Shanghai	1763	7	0	Alternative	923
-R199	Ho Chi Minh City	Ningbo	1585	7	0	Standard	937
-R200	Manila	Qingdao	1444	6	0	Alternative	956
-R201	Hong Kong	Busan	1226	6	0	Alternative	966
-R202	Yantian	Tokyo	1717	7	0	Standard	1057
-R203	Shanghai	Kaohsiung	583	4	0	Alternative	717
-R204	Ningbo	Jebel Ali	3929	13	1	Alternative	1357
-R205	Qingdao	Dammam	4007	13	1	Standard	1401
-R206	Busan	Colombo	3572	12	1	Alternative	1386
-R207	Tokyo	Suez	5735	17	1	Alternative	1670
-R208	Kaohsiung	Rotterdam	5840	18	1	Standard	1717
-R209	Jebel Ali	Hamburg	2953	10	1	Alternative	1420
-R210	Dammam	Antwerp	2850	10	1	Alternative	1198
-R211	Colombo	Felixstowe	5210	16	1	Standard	1504
-R212	Suez	Barcelona	1816	7	1	Alternative	1149
-R213	Rotterdam	Genoa	544	4	0	Alternative	818
-R214	Hamburg	Piraeus	1225	6	0	Standard	931
-R215	Antwerp	Los Angeles	5465	17	1	Alternative	1673
-R216	Felixstowe	Long Beach	5336	16	1	Alternative	1694
-R217	Barcelona	New York	3730	12	1	Standard	1299
-R218	Genoa	Savannah	4587	14	1	Alternative	1433
-R219	Piraeus	Vancouver	5914	18	1	Alternative	1620
-R220	Los Angeles	Manzanillo	1294	6	0	Standard	904
-R221	Long Beach	Santos	6011	18	1	Alternative	1701
-R222	New York	Buenos Aires	5154	16	1	Alternative	1638
-R223	Savannah	Callao	2979	10	1	Standard	1423
-R224	Vancouver	Durban	10250	29	2	Alternative	2269
-R225	Manzanillo	Cape Town	8562	25	1	Alternative	1890
-R226	Santos	Lagos	3848	13	1	Standard	1383
-R227	Buenos Aires	Mombasa	6341	19	1	Alternative	1704
-R228	Callao	Sydney	7737	23	1	Alternative	1900
-R229	Durban	Melbourne	5947	18	1	Standard	1729
-R230	Cape Town	Auckland	7119	21	1	Alternative	1899
-R231	Lagos	Chennai	5098	16	1	Alternative	1456
-R232	Mombasa	Mumbai	2685	9	1	Standard	1214
-R233	Sydney	Nhava Sheva	6134	18	1	Alternative	1645
-R234	Melbourne	Kolkata	5409	17	1	Alternative	1597
-R235	Auckland	Visakhapatnam	6839	20	1	Standard	1796
-R236	Chennai	Port Klang	1560	7	0	Alternative	1004
-R237	Mumbai	Tanjung Pelepas	2343	9	0	Alternative	1129
-R238	Nhava Sheva	Jakarta	2809	10	0	Standard	973
-R239	Kolkata	Laem Chabang	1023	5	0	Alternative	803
-R240	Visakhapatnam	Ho Chi Minh City	1598	7	0	Alternative	904
-R241	Singapore	Manila	1451	6	0	Standard	922
-R242	Port Klang	Hong Kong	1543	7	0	Alternative	967
-R243	Tanjung Pelepas	Yantian	1588	7	0	Alternative	1008
-R244	Jakarta	Shanghai	2680	9	0	Standard	1168
-R245	Laem Chabang	Ningbo	1710	7	0	Alternative	847
-R246	Ho Chi Minh City	Qingdao	1894	7	0	Alternative	903
-R247	Manila	Busan	1462	6	0	Standard	888
-R248	Hong Kong	Tokyo	1733	7	0	Alternative	954
-R249	Yantian	Kaohsiung	374	3	0	Alternative	833
-R250	Shanghai	Jebel Ali	3906	13	1	Standard	1494
-R251	Ningbo	Dammam	4172	13	1	Alternative	1560
-R252	Qingdao	Colombo	3166	11	0	Alternative	1014
-R253	Busan	Suez	5248	16	1	Standard	1509
-R254	Tokyo	Rotterdam	5665	17	1	Alternative	1591
-R255	Kaohsiung	Hamburg	5592	17	1	Alternative	1618
-R256	Jebel Ali	Antwerp	3121	11	1	Standard	1369
-R257	Dammam	Felixstowe	2986	10	1	Alternative	1388
-R258	Colombo	Barcelona	5124	16	1	Alternative	1669
-R259	Suez	Genoa	1584	7	1	Standard	1052
-R260	Rotterdam	Piraeus	1302	6	0	Alternative	835
-R261	Hamburg	Los Angeles	5508	17	1	Alternative	1573
-R262	Antwerp	Long Beach	5463	17	1	Standard	1603
-R263	Felixstowe	New York	3418	11	1	Alternative	1403
-R264	Barcelona	Savannah	4358	14	1	Alternative	1546
-R265	Genoa	Vancouver	5205	16	1	Standard	1679
-R266	Piraeus	Manzanillo	7057	21	1	Alternative	1682
-R267	Los Angeles	Santos	6013	18	1	Alternative	1596
-R268	Long Beach	Buenos Aires	5943	18	1	Standard	1623
-R269	New York	Callao	3552	12	1	Alternative	1383
-R270	Savannah	Durban	8255	24	1	Alternative	1959
-R271	Vancouver	Cape Town	9944	28	2	Standard	2409
-R272	Manzanillo	Lagos	7021	21	1	Alternative	1887
-R273	Santos	Mombasa	5696	17	1	Alternative	1525
-R274	Buenos Aires	Sydney	7137	21	1	Standard	1726
-R275	Callao	Melbourne	7830	23	1	Alternative	1840
-R276	Durban	Auckland	7070	21	1	Alternative	1788
-R277	Cape Town	Chennai	5059	16	1	Standard	1592
-R278	Lagos	Mumbai	4607	14	1	Alternative	1575
-R279	Mombasa	Nhava Sheva	2691	10	1	Alternative	1389
-R280	Sydney	Kolkata	5526	17	1	Standard	1505
-R281	Melbourne	Visakhapatnam	5394	17	1	Alternative	1525
-R282	Auckland	Singapore	5086	16	1	Alternative	1525
-R283	Chennai	Tanjung Pelepas	1739	7	0	Standard	955
-R284	Mumbai	Jakarta	2815	10	0	Alternative	1114
-R285	Nhava Sheva	Laem Chabang	1845	7	0	Alternative	1037
-R286	Kolkata	Ho Chi Minh City	1420	6	0	Standard	1023
-R287	Visakhapatnam	Manila	2444	9	0	Alternative	931
-R288	Singapore	Hong Kong	1569	7	0	Alternative	865
-R289	Port Klang	Yantian	1560	7	0	Standard	899
-R290	Tanjung Pelepas	Shanghai	2309	9	0	Alternative	1021
-R291	Jakarta	Ningbo	2598	9	0	Alternative	1089
-R292	Laem Chabang	Qingdao	1943	8	0	Standard	1048
-R293	Ho Chi Minh City	Busan	2131	8	0	Alternative	1105
-R294	Manila	Tokyo	1797	7	0	Alternative	857
-R295	Hong Kong	Kaohsiung	382	3	0	Standard	729
-R296	Yantian	Jebel Ali	3620	12	1	Alternative	1356
-R297	Shanghai	Dammam	4143	13	1	Alternative	1451
-R298	Ningbo	Colombo	3049	10	0	Standard	1141
-R299	Qingdao	Suez	4795	15	1	Alternative	1596
-R300	Busan	Rotterdam	5408	17	1	Alternative	1702
-R301	Tokyo	Hamburg	5442	17	1	Standard	1496
-R302	Kaohsiung	Antwerp	5869	18	1	Alternative	1580
-R303	Jebel Ali	Felixstowe	3257	11	1	Alternative	1315
-R304	Dammam	Barcelona	2817	10	1	Standard	1299
-R305	Colombo	Genoa	4812	15	1	Alternative	1563
-R306	Suez	Piraeus	730	4	1	Alternative	1129
-R307	Rotterdam	Los Angeles	5434	17	1	Standard	1705
-R308	Hamburg	Long Beach	5505	17	1	Alternative	1503
-R309	Antwerp	New York	3555	12	1	Alternative	1314
-R310	Felixstowe	Savannah	4092	13	1	Standard	1411
-R311	Barcelona	Vancouver	5204	16	1	Alternative	1573
-R312	Genoa	Manzanillo	6200	19	1	Alternative	1723
-R313	Piraeus	Santos	6064	18	1	Standard	1742
-R314	Los Angeles	Buenos Aires	5944	18	1	Alternative	1764
-R315	Long Beach	Callao	4050	13	1	Alternative	1336
-R316	New York	Durban	8048	23	1	Standard	1831
-R317	Savannah	Cape Town	7691	23	1	Alternative	1824
-R318	Vancouver	Lagos	7228	21	1	Alternative	1806
-R319	Manzanillo	Mombasa	9534	27	2	Standard	2326
-R320	Santos	Sydney	8057	23	1	Alternative	1972
-R321	Buenos Aires	Melbourne	7021	21	1	Alternative	1887
-R322	Callao	Auckland	6508	19	1	Standard	1618
-R323	Durban	Chennai	4302	14	1	Alternative	1400
-R324	Cape Town	Mumbai	4976	15	1	Alternative	1512
-R325	Lagos	Nhava Sheva	4614	15	1	Standard	1506
-R326	Mombasa	Kolkata	3664	12	1	Alternative	1431
-R327	Sydney	Visakhapatnam	5561	17	1	Alternative	1685
-R328	Melbourne	Singapore	3662	12	1	Standard	1501
-R329	Auckland	Port Klang	5286	16	1	Alternative	1478
-R330	Chennai	Jakarta	2196	8	0	Alternative	938
-R331	Mumbai	Laem Chabang	1853	7	0	Standard	933
-R332	Nhava Sheva	Ho Chi Minh City	2257	8	0	Alternative	1015
-R333	Kolkata	Manila	2142	8	0	Alternative	1036
-R334	Visakhapatnam	Hong Kong	1977	8	0	Standard	1052
-R335	Singapore	Yantian	1587	7	0	Alternative	1043
-R336	Port Klang	Shanghai	2285	8	0	Alternative	913
-R337	Tanjung Pelepas	Ningbo	2235	8	0	Standard	942
-R338	Jakarta	Qingdao	2961	10	0	Alternative	1061
-R339	Laem Chabang	Busan	2260	8	0	Alternative	1015
-R340	Ho Chi Minh City	Tokyo	2604	9	0	Standard	1089
-R341	Manila	Kaohsiung	542	4	0	Alternative	887
-R342	Hong Kong	Jebel Ali	3619	12	1	Alternative	1496
-R343	Yantian	Dammam	3895	13	1	Standard	1318
-R344	Shanghai	Colombo	3080	11	0	Alternative	1039
-R345	Ningbo	Suez	5031	16	1	Alternative	1519
-R346	Qingdao	Rotterdam	5096	16	1	Standard	1561
-R347	Busan	Hamburg	5171	16	1	Alternative	1605
-R348	Tokyo	Antwerp	5706	17	1	Alternative	1701
-R349	Kaohsiung	Felixstowe	5945	18	1	Standard	1764
-R350	Jebel Ali	Barcelona	3119	11	1	Alternative	1229
-R351	Dammam	Genoa	2523	9	1	Alternative	1195
-R352	Colombo	Piraeus	3992	13	1	Standard	1399
-R353	Suez	Los Angeles	7436	22	1	Alternative	1830
-R354	Rotterdam	Long Beach	5431	17	1	Alternative	1635
-R355	Hamburg	New York	3708	12	1	Standard	1471
-R356	Antwerp	Savannah	4229	14	1	Alternative	1566
-R357	Felixstowe	Vancouver	4594	14	1	Alternative	1398
-R358	Barcelona	Manzanillo	5996	18	1	Standard	1595
-R359	Genoa	Santos	5714	17	1	Alternative	1597
-R360	Piraeus	Buenos Aires	7062	21	1	Alternative	1787
-R361	Los Angeles	Callao	4051	13	1	Standard	1476
-R362	Long Beach	Durban	10333	29	2	Alternative	2453
-R363	New York	Cape Town	7598	22	1	Alternative	1954
-R364	Savannah	Lagos	5508	17	1	Standard	1503
-R365	Vancouver	Mombasa	8907	26	1	Alternative	1929
-R366	Manzanillo	Sydney	7546	22	1	Alternative	1808
-R367	Santos	Melbourne	7889	23	1	Standard	1882
-R368	Buenos Aires	Auckland	6262	19	1	Alternative	1730
-R369	Callao	Chennai	10619	30	2	Alternative	2486
-R370	Durban	Mumbai	4255	14	1	Standard	1569
-R371	Cape Town	Nhava Sheva	4982	15	1	Alternative	1443
-R372	Lagos	Kolkata	5575	17	1	Alternative	1546
-R373	Mombasa	Visakhapatnam	3237	11	1	Standard	1312
-R374	Sydney	Singapore	3810	12	1	Alternative	1413
-R375	Melbourne	Port Klang	3856	13	1	Alternative	1453
-R376	Auckland	Tanjung Pelepas	5105	16	1	Standard	1632
-R377	Chennai	Laem Chabang	1350	6	0	Alternative	1015
-R378	Mumbai	Ho Chi Minh City	2264	8	0	Alternative	910
-R379	Nhava Sheva	Manila	3097	11	0	Standard	1041
-R380	Kolkata	Hong Kong	1602	7	0	Alternative	904
-R381	Visakhapatnam	Yantian	1984	8	0	Alternative	983
-R382	Singapore	Shanghai	2307	9	0	Standard	1055
-R383	Port Klang	Ningbo	2216	8	0	Alternative	1080
-R384	Tanjung Pelepas	Qingdao	2559	9	0	Alternative	1154
-R385	Jakarta	Busan	3106	11	0	Standard	1007
-R386	Laem Chabang	Tokyo	2784	10	0	Alternative	1005
-R387	Ho Chi Minh City	Kaohsiung	1183	6	0	Alternative	856
-R388	Manila	Jebel Ali	4194	13	1	Standard	1457
-R389	Hong Kong	Dammam	3894	13	1	Alternative	1458
-R390	Yantian	Colombo	2463	9	0	Alternative	1108
-R391	Shanghai	Suez	4987	15	1	Standard	1654
-R392	Ningbo	Rotterdam	5477	17	1	Alternative	1500
-R393	Qingdao	Hamburg	4853	15	1	Alternative	1463
-R394	Busan	Antwerp	5445	17	1	Standard	1566
-R395	Tokyo	Felixstowe	5736	17	1	Alternative	1635
-R396	Kaohsiung	Barcelona	6330	19	1	Alternative	1738
-R397	Jebel Ali	Genoa	2815	10	1	Standard	1369
-R398	Dammam	Piraeus	1684	7	1	Alternative	1274
-R399	Colombo	Los Angeles	9135	26	2	Alternative	2141
-R400	Suez	Long Beach	7434	22	1	Standard	1760
-R401	Rotterdam	New York	3541	12	1	Alternative	1347
-R402	Hamburg	Savannah	4392	14	1	Alternative	1480
-R403	Antwerp	Vancouver	4707	15	1	Standard	1551
-R404	Felixstowe	Manzanillo	5667	17	1	Alternative	1697
-R405	Barcelona	Santos	5332	16	1	Alternative	1693
-R406	Genoa	Buenos Aires	6713	20	1	Standard	1642
-R407	Piraeus	Callao	7115	21	1	Alternative	1723
-R408	Los Angeles	Durban	10337	29	2	Alternative	2349
-R409	Long Beach	Cape Town	9701	28	2	Standard	2311
-R410	New York	Lagos	5127	16	1	Alternative	1600
-R411	Savannah	Mombasa	7936	23	1	Alternative	1958
-R412	Vancouver	Sydney	7560	22	1	Standard	1949
-R413	Manzanillo	Melbourne	7913	23	1	Alternative	1780
-R414	Santos	Auckland	7256	21	1	Alternative	1739
-R415	Buenos Aires	Chennai	9207	26	2	Standard	2219
-R416	Callao	Mumbai	10106	29	2	Alternative	2357
-R417	Durban	Nhava Sheva	4260	14	1	Alternative	1500
-R418	Cape Town	Kolkata	5865	18	1	Standard	1719
-R419	Lagos	Visakhapatnam	5271	16	1	Alternative	1686
-R420	Mombasa	Singapore	4326	14	1	Alternative	1367
-R421	Sydney	Port Klang	4008	13	1	Standard	1366
-R422	Melbourne	Tanjung Pelepas	3679	12	1	Alternative	1363
-R423	Auckland	Jakarta	4619	15	1	Alternative	1506
-R424	Chennai	Ho Chi Minh City	1745	7	0	Standard	991
-R425	Mumbai	Manila	3105	11	0	Alternative	1182
-R426	Nhava Sheva	Hong Kong	2596	9	0	Alternative	1159
-R427	Kolkata	Yantian	1607	7	0	Standard	835
-R428	Visakhapatnam	Shanghai	2497	9	0	Alternative	972
-R429	Singapore	Ningbo	2232	8	0	Alternative	977
-R430	Port Klang	Qingdao	2517	9	0	Standard	1044
-R431	Tanjung Pelepas	Busan	2773	10	0	Alternative	1109
-R432	Jakarta	Tokyo	3478	12	0	Alternative	1225
-R433	Laem Chabang	Kaohsiung	1396	6	0	Standard	1021
-R434	Ho Chi Minh City	Jebel Ali	3420	11	1	Alternative	1263
-R435	Manila	Dammam	4483	14	1	Alternative	1421
-R436	Hong Kong	Colombo	2451	9	0	Standard	1002
-R437	Yantian	Suez	4850	15	1	Alternative	1533
-R438	Shanghai	Rotterdam	5399	17	1	Alternative	1631
-R439	Ningbo	Hamburg	5232	16	1	Standard	1647
-R440	Qingdao	Antwerp	5130	16	1	Alternative	1670
-R441	Busan	Felixstowe	5493	17	1	Alternative	1502
-R442	Tokyo	Barcelona	6310	19	1	Standard	1631
-R443	Kaohsiung	Genoa	5940	18	1	Alternative	1623
-R444	Jebel Ali	Piraeus	1987	8	1	Alternative	1204
-R445	Dammam	Los Angeles	7990	23	1	Standard	1929
-R446	Colombo	Long Beach	9136	26	2	Alternative	2316
-R447	Suez	New York	5517	17	1	Alternative	1714
-R448	Rotterdam	Savannah	4217	13	1	Standard	1355
-R449	Hamburg	Vancouver	4696	15	1	Alternative	1445
-R450	Antwerp	Manzanillo	5803	18	1	Alternative	1607
-R451	Felixstowe	Santos	5824	18	1	Standard	1645
-R452	Barcelona	Buenos Aires	6329	19	1	Alternative	1738
-R453	Genoa	Callao	6431	19	1	Alternative	1785
-R454	Piraeus	Durban	4583	14	1	Standard	1607
-R455	Los Angeles	Cape Town	9704	28	2	Alternative	2206
-R456	Long Beach	Lagos	7514	22	1	Alternative	1769
-R457	New York	Mombasa	7429	22	1	Standard	1794
-R458	Savannah	Sydney	9184	26	2	Alternative	2251
-R459	Vancouver	Melbourne	7989	23	1	Alternative	1929
-R460	Manzanillo	Auckland	6347	19	1	Standard	1775
-R461	Santos	Chennai	8642	25	1	Alternative	2074
-R462	Buenos Aires	Mumbai	9025	26	2	Alternative	2128
-R463	Callao	Nhava Sheva	10113	29	2	Standard	2288
-R464	Durban	Kolkata	5114	16	1	Alternative	1528
-R465	Cape Town	Visakhapatnam	5405	17	1	Alternative	1597
-R466	Lagos	Singapore	6740	20	1	Standard	1785
-R467	Mombasa	Port Klang	4175	13	1	Alternative	1525
-R468	Sydney	Tanjung Pelepas	3827	12	1	Alternative	1520
-R469	Melbourne	Jakarta	3153	11	1	Standard	1233
-R470	Auckland	Laem Chabang	5741	17	1	Alternative	1565
-R471	Chennai	Manila	2657	9	0	Alternative	1026
-R472	Mumbai	Hong Kong	2603	9	0	Standard	1054
-R473	Nhava Sheva	Yantian	2601	9	0	Alternative	1089
-R474	Kolkata	Shanghai	2060	8	0	Alternative	1062
-R475	Visakhapatnam	Ningbo	2483	9	0	Standard	1146
-R476	Singapore	Qingdao	2558	9	0	Alternative	944
-R477	Port Klang	Busan	2762	10	0	Alternative	1003
-R478	Tanjung Pelepas	Tokyo	3213	11	0	Standard	1089
-R479	Jakarta	Kaohsiung	2124	8	0	Alternative	999
-R480	Laem Chabang	Jebel Ali	3007	10	1	Alternative	1356
-R481	Ho Chi Minh City	Dammam	3727	12	1	Standard	1474
-R482	Manila	Colombo	2761	10	0	Alternative	1178
-R483	Hong Kong	Suez	4852	15	1	Alternative	1428
-R484	Yantian	Rotterdam	5631	17	1	Standard	1553
-R485	Shanghai	Hamburg	5154	16	1	Alternative	1533
-R486	Ningbo	Antwerp	5509	17	1	Alternative	1609
-R487	Qingdao	Felixstowe	5190	16	1	Standard	1607
-R488	Busan	Barcelona	6006	18	1	Alternative	1736
-R489	Tokyo	Genoa	5951	18	1	Alternative	1764
-R490	Kaohsiung	Piraeus	5463	17	1	Standard	1498
-R491	Jebel Ali	Los Angeles	8132	24	1	Alternative	1840
-R492	Dammam	Long Beach	7989	23	1	Alternative	1859
-R493	Colombo	New York	8518	25	1	Standard	1955
-R494	Suez	Savannah	6164	19	1	Alternative	1719
-R495	Rotterdam	Vancouver	4669	15	1	Alternative	1582
-R496	Hamburg	Manzanillo	5931	18	1	Standard	1762
-R497	Antwerp	Santos	5876	18	1	Alternative	1546
-R498	Felixstowe	Buenos Aires	6795	20	1	Alternative	1686
-R499	Barcelona	Callao	6059	18	1	Standard	1637
-R500	Genoa	Durban	5175	16	1	Alternative	1570
+R001	Chennai	Mumbai	621	4	0	Standard	756.0
+R002	Mumbai	Nhava Sheva	50	3	0	Alternative	726.0
+R003	Nhava Sheva	Kolkata	999	5	0	Alternative	870.0
+R004	Kolkata	Visakhapatnam	462	4	0	Standard	843.0
+R005	Visakhapatnam	Singapore	1753	7	0	Alternative	1027.0
+R006	Singapore	Port Klang	200	3	0	Alternative	883.0
+R007	Port Klang	Tanjung Pelepas	182	3	0	Standard	671.0
+R008	Tanjung Pelepas	Jakarta	549	4	0	Alternative	748.0
+R009	Jakarta	Laem Chabang	1351	6	0	Alternative	875.0
+R010	Laem Chabang	Ho Chi Minh City	413	4	0	Standard	802.0
+R011	Ho Chi Minh City	Manila	971	5	0	Alternative	902.0
+R012	Manila	Hong Kong	676	4	0	Alternative	903.0
+R013	Hong Kong	Yantian	50	3	0	Standard	866.0
+R014	Yantian	Shanghai	725	4	0	Alternative	733.0
+R015	Shanghai	Ningbo	92	3	0	Alternative	696.0
+R016	Ningbo	Qingdao	422	4	0	Standard	769.0
+R017	Qingdao	Busan	478	4	0	Alternative	810.0
+R018	Busan	Tokyo	582	4	0	Alternative	857.0
+R019	Tokyo	Kaohsiung	1422	6	0	Standard	989.0
+R020	Kaohsiung	Jebel Ali	3979	13	1	Alternative	1538.0
+R021	Jebel Ali	Dammam	314	3	0	Alternative	686.0
+R022	Dammam	Colombo	2311	9	1	Standard	1171.0
+R023	Colombo	Suez	3360	11	1	Alternative	1326.0
+R024	Suez	Rotterdam	2028	8	1	Alternative	1208.0
+R025	Rotterdam	Hamburg	250	3	0	Standard	819.0
+R026	Hamburg	Antwerp	278	3	0	Alternative	857.0
+R027	Antwerp	Felixstowe	137	3	0	Alternative	876.0
+R028	Felixstowe	Barcelona	712	4	0	Standard	732.0
+R029	Barcelona	Genoa	390	4	0	Alternative	730.0
+R030	Genoa	Piraeus	860	5	0	Alternative	819.0
+R031	Piraeus	Los Angeles	6729	20	1	Standard	1749.0
+R032	Los Angeles	Long Beach	50	3	0	Alternative	796.0
+R033	Long Beach	New York	2387	9	0	Alternative	1100.0
+R034	New York	Savannah	694	4	0	Standard	940.0
+R035	Savannah	Vancouver	2394	9	0	Alternative	925.0
+R036	Vancouver	Manzanillo	2272	8	0	Alternative	946.0
+R037	Manzanillo	Santos	4775	15	1	Standard	1489.0
+R038	Santos	Buenos Aires	1004	5	0	Alternative	870.0
+R039	Buenos Aires	Callao	1900	7	0	Alternative	1008.0
+R040	Callao	Durban	6671	20	1	Standard	1812.0
+R041	Durban	Cape Town	769	5	0	Alternative	948.0
+R042	Cape Town	Lagos	2879	10	0	Alternative	981.0
+R043	Lagos	Mombasa	2536	9	0	Standard	977.0
+R044	Mombasa	Sydney	7085	21	1	Alternative	1755.0
+R045	Sydney	Melbourne	431	4	0	Alternative	805.0
+R046	Melbourne	Auckland	1588	7	0	Standard	973.0
+R047	Auckland	Chennai	6815	20	1	Alternative	1829.0
+R048	Chennai	Nhava Sheva	616	4	0	Alternative	931.0
+R049	Mumbai	Kolkata	1006	5	0	Standard	766.0
+R050	Nhava Sheva	Visakhapatnam	661	4	0	Alternative	761.0
+R051	Kolkata	Singapore	1753	7	0	Alternative	922.0
+R052	Visakhapatnam	Port Klang	1553	7	0	Standard	934.0
+R053	Singapore	Tanjung Pelepas	50	3	0	Alternative	796.0
+R054	Port Klang	Jakarta	714	4	0	Alternative	907.0
+R055	Tanjung Pelepas	Laem Chabang	809	5	0	Standard	953.0
+R056	Jakarta	Ho Chi Minh City	1135	5	0	Alternative	781.0
+R057	Laem Chabang	Manila	1316	6	0	Alternative	836.0
+R058	Ho Chi Minh City	Hong Kong	912	5	0	Standard	825.0
+R059	Manila	Yantian	685	4	0	Alternative	834.0
+R060	Hong Kong	Shanghai	743	4	0	Alternative	875.0
+R061	Yantian	Ningbo	658	4	0	Standard	901.0
+R062	Shanghai	Qingdao	331	3	0	Alternative	898.0
+R063	Ningbo	Busan	552	4	0	Alternative	713.0
+R064	Qingdao	Tokyo	1050	5	0	Standard	806.0
+R065	Busan	Kaohsiung	983	5	0	Alternative	833.0
+R066	Tokyo	Jebel Ali	4820	15	1	Alternative	1529.0
+R067	Kaohsiung	Dammam	4248	14	1	Standard	1499.0
+R068	Jebel Ali	Colombo	2006	8	1	Alternative	1276.0
+R069	Dammam	Suez	1066	5	0	Alternative	983.0
+R070	Colombo	Rotterdam	5081	16	1	Standard	1454.0
+R071	Suez	Hamburg	1930	8	1	Alternative	1127.0
+R072	Rotterdam	Antwerp	50	3	0	Alternative	726.0
+R073	Hamburg	Felixstowe	367	3	0	Standard	797.0
+R074	Antwerp	Barcelona	669	4	0	Alternative	867.0
+R075	Felixstowe	Genoa	611	4	0	Alternative	895.0
+R076	Barcelona	Piraeus	1132	5	0	Standard	990.0
+R077	Genoa	Los Angeles	5939	18	1	Alternative	1553.0
+R078	Piraeus	Long Beach	6726	20	1	Alternative	1678.0
+R079	Los Angeles	New York	2390	9	0	Standard	995.0
+R080	Long Beach	Savannah	2087	8	0	Alternative	995.0
+R081	New York	Vancouver	2362	9	0	Alternative	1062.0
+R082	Savannah	Manzanillo	1653	7	0	Standard	1015.0
+R083	Vancouver	Santos	6716	20	1	Alternative	1852.0
+R084	Manzanillo	Buenos Aires	4651	15	1	Alternative	1405.0
+R085	Santos	Callao	2119	8	0	Standard	929.0
+R086	Buenos Aires	Durban	4918	15	1	Alternative	1506.0
+R087	Callao	Cape Town	5905	18	1	Alternative	1654.0
+R088	Durban	Lagos	3024	10	0	Standard	1138.0
+R089	Cape Town	Mombasa	2409	9	0	Alternative	1102.0
+R090	Lagos	Sydney	9384	27	2	Alternative	2379.0
+R091	Mombasa	Melbourne	6689	20	1	Standard	1639.0
+R092	Sydney	Auckland	1304	6	0	Alternative	835.0
+R093	Melbourne	Chennai	5315	16	1	Alternative	1551.0
+R094	Auckland	Mumbai	7434	22	1	Standard	1830.0
+R095	Chennai	Kolkata	821	5	0	Alternative	884.0
+R096	Mumbai	Visakhapatnam	668	4	0	Alternative	902.0
+R097	Nhava Sheva	Singapore	2356	9	0	Standard	1131.0
+R098	Kolkata	Port Klang	1567	7	0	Alternative	830.0
+R099	Visakhapatnam	Tanjung Pelepas	1735	7	0	Alternative	885.0
+R100	Singapore	Jakarta	536	4	0	Standard	782.0
+R101	Port Klang	Laem Chabang	679	4	0	Alternative	833.0
+R102	Tanjung Pelepas	Ho Chi Minh City	667	4	0	Alternative	867.0
+R103	Jakarta	Manila	1680	7	0	Standard	1018.0
+R104	Laem Chabang	Hong Kong	1052	5	0	Alternative	981.0
+R105	Ho Chi Minh City	Yantian	930	5	0	Alternative	757.0
+R106	Manila	Shanghai	1119	5	0	Standard	814.0
+R107	Hong Kong	Ningbo	675	4	0	Alternative	798.0
+R108	Yantian	Qingdao	976	5	0	Alternative	867.0
+R109	Shanghai	Busan	499	4	0	Standard	847.0
+R110	Ningbo	Tokyo	1089	5	0	Alternative	950.0
+R111	Qingdao	Kaohsiung	904	5	0	Alternative	964.0
+R112	Busan	Jebel Ali	4266	14	1	Standard	1361.0
+R113	Tokyo	Dammam	5022	16	1	Alternative	1483.0
+R114	Kaohsiung	Colombo	2821	10	0	Alternative	1044.0
+R115	Jebel Ali	Suez	1380	6	0	Standard	914.0
+R116	Dammam	Rotterdam	2862	10	1	Alternative	1339.0
+R117	Colombo	Hamburg	4878	15	1	Alternative	1606.0
+R118	Suez	Antwerp	2003	8	1	Standard	1310.0
+R119	Rotterdam	Felixstowe	130	3	0	Alternative	665.0
+R120	Hamburg	Barcelona	891	5	0	Alternative	787.0
+R121	Antwerp	Genoa	502	4	0	Standard	778.0
+R122	Felixstowe	Piraeus	1409	6	0	Alternative	917.0
+R123	Barcelona	Los Angeles	5855	18	1	Alternative	1683.0
+R124	Genoa	Long Beach	5937	18	1	Standard	1728.0
+R125	Piraeus	New York	4792	15	1	Alternative	1631.0
+R126	Los Angeles	Savannah	2091	8	0	Alternative	890.0
+R127	Long Beach	Vancouver	1072	5	0	Standard	808.0
+R128	New York	Manzanillo	2269	8	0	Alternative	981.0
+R129	Savannah	Santos	4380	14	1	Alternative	1479.0
+R130	Vancouver	Buenos Aires	6833	20	1	Standard	1796.0
+R131	Manzanillo	Callao	2761	10	1	Alternative	1363.0
+R132	Santos	Durban	4568	14	1	Alternative	1605.0
+R133	Buenos Aires	Cape Town	4155	13	1	Standard	1348.0
+R134	Callao	Lagos	5523	17	1	Alternative	1540.0
+R135	Durban	Mombasa	1821	7	0	Alternative	929.0
+R136	Cape Town	Sydney	6659	20	1	Standard	1741.0
+R137	Lagos	Melbourne	8954	26	1	Alternative	2040.0
+R138	Mombasa	Auckland	8173	24	1	Alternative	1985.0
+R139	Sydney	Chennai	5519	17	1	Standard	1715.0
+R140	Melbourne	Mumbai	5935	18	1	Alternative	1553.0
+R141	Auckland	Nhava Sheva	7428	22	1	Alternative	1759.0
+R142	Chennai	Visakhapatnam	364	3	0	Standard	762.0
+R143	Mumbai	Singapore	2362	9	0	Alternative	1027.0
+R144	Nhava Sheva	Port Klang	2156	8	0	Alternative	1038.0
+R145	Kolkata	Tanjung Pelepas	1738	7	0	Standard	1025.0
+R146	Visakhapatnam	Jakarta	2242	8	0	Alternative	1118.0
+R147	Singapore	Laem Chabang	819	5	0	Alternative	744.0
+R148	Port Klang	Ho Chi Minh City	631	4	0	Standard	758.0
+R149	Tanjung Pelepas	Manila	1461	6	0	Alternative	888.0
+R150	Jakarta	Hong Kong	1970	8	0	Alternative	982.0
+R151	Laem Chabang	Yantian	1067	5	0	Standard	913.0
+R152	Ho Chi Minh City	Shanghai	1655	7	0	Alternative	1015.0
+R153	Manila	Ningbo	1027	5	0	Alternative	978.0
+R154	Hong Kong	Qingdao	994	5	0	Standard	764.0
+R155	Yantian	Busan	1209	6	0	Alternative	824.0
+R156	Shanghai	Tokyo	1057	5	0	Alternative	842.0
+R157	Ningbo	Kaohsiung	493	4	0	Standard	812.0
+R158	Qingdao	Jebel Ali	3789	12	1	Alternative	1446.0
+R159	Busan	Dammam	4481	14	1	Alternative	1560.0
+R160	Tokyo	Colombo	4136	13	1	Standard	1556.0
+R161	Kaohsiung	Suez	5183	16	1	Alternative	1466.0
+R162	Jebel Ali	Rotterdam	3130	11	1	Alternative	1265.0
+R163	Dammam	Hamburg	2696	10	1	Standard	1250.0
+R164	Colombo	Antwerp	5078	16	1	Alternative	1559.0
+R165	Suez	Felixstowe	2138	8	1	Alternative	1256.0
+R166	Rotterdam	Barcelona	717	4	0	Standard	907.0
+R167	Hamburg	Genoa	617	4	0	Alternative	931.0
+R168	Antwerp	Piraeus	1276	6	0	Alternative	797.0
+R169	Felixstowe	Los Angeles	5338	16	1	Standard	1519.0
+R170	Barcelona	Long Beach	5853	18	1	Alternative	1613.0
+R171	Genoa	New York	3933	13	1	Alternative	1427.0
+R172	Piraeus	Savannah	5446	17	1	Standard	1636.0
+R173	Los Angeles	Vancouver	1073	5	0	Alternative	948.0
+R174	Long Beach	Manzanillo	1293	6	0	Alternative	1009.0
+R175	New York	Santos	4679	15	1	Standard	1408.0
+R176	Savannah	Buenos Aires	4708	15	1	Alternative	1446.0
+R177	Vancouver	Callao	4939	15	1	Alternative	1508.0
+R178	Manzanillo	Durban	9294	27	2	Standard	2264.0
+R179	Santos	Cape Town	3808	12	1	Alternative	1448.0
+R180	Buenos Aires	Lagos	4785	15	1	Alternative	1595.0
+R181	Callao	Mombasa	7743	23	1	Standard	1970.0
+R182	Durban	Sydney	6379	19	1	Alternative	1604.0
+R183	Cape Town	Melbourne	6238	19	1	Alternative	1622.0
+R184	Lagos	Auckland	9993	29	2	Standard	2309.0
+R185	Mombasa	Chennai	2945	10	1	Alternative	1314.0
+R186	Sydney	Mumbai	6139	18	1	Alternative	1716.0
+R187	Melbourne	Nhava Sheva	5930	18	1	Standard	1727.0
+R188	Auckland	Kolkata	6764	20	1	Alternative	1858.0
+R189	Chennai	Singapore	1758	7	0	Alternative	852.0
+R190	Mumbai	Port Klang	2162	8	0	Standard	934.0
+R191	Nhava Sheva	Tanjung Pelepas	2337	9	0	Alternative	989.0
+R192	Kolkata	Jakarta	2281	8	0	Alternative	1017.0
+R193	Visakhapatnam	Laem Chabang	1186	6	0	Standard	926.0
+R194	Singapore	Ho Chi Minh City	668	4	0	Alternative	902.0
+R195	Port Klang	Manila	1515	6	0	Alternative	1034.0
+R196	Tanjung Pelepas	Hong Kong	1571	7	0	Standard	831.0
+R197	Jakarta	Yantian	1988	8	0	Alternative	914.0
+R198	Laem Chabang	Shanghai	1763	7	0	Alternative	923.0
+R199	Ho Chi Minh City	Ningbo	1585	7	0	Standard	937.0
+R200	Manila	Qingdao	1444	6	0	Alternative	956.0
+R201	Hong Kong	Busan	1226	6	0	Alternative	966.0
+R202	Yantian	Tokyo	1717	7	0	Standard	1057.0
+R203	Shanghai	Kaohsiung	583	4	0	Alternative	717.0
+R204	Ningbo	Jebel Ali	3929	13	1	Alternative	1357.0
+R205	Qingdao	Dammam	4007	13	1	Standard	1401.0
+R206	Busan	Colombo	3572	12	1	Alternative	1386.0
+R207	Tokyo	Suez	5735	17	1	Alternative	1670.0
+R208	Kaohsiung	Rotterdam	5840	18	1	Standard	1717.0
+R209	Jebel Ali	Hamburg	2953	10	1	Alternative	1420.0
+R210	Dammam	Antwerp	2850	10	1	Alternative	1198.0
+R211	Colombo	Felixstowe	5210	16	1	Standard	1504.0
+R212	Suez	Barcelona	1816	7	1	Alternative	1149.0
+R213	Rotterdam	Genoa	544	4	0	Alternative	818.0
+R214	Hamburg	Piraeus	1225	6	0	Standard	931.0
+R215	Antwerp	Los Angeles	5465	17	1	Alternative	1673.0
+R216	Felixstowe	Long Beach	5336	16	1	Alternative	1694.0
+R217	Barcelona	New York	3730	12	1	Standard	1299.0
+R218	Genoa	Savannah	4587	14	1	Alternative	1433.0
+R219	Piraeus	Vancouver	5914	18	1	Alternative	1620.0
+R220	Los Angeles	Manzanillo	1294	6	0	Standard	904.0
+R221	Long Beach	Santos	6011	18	1	Alternative	1701.0
+R222	New York	Buenos Aires	5154	16	1	Alternative	1638.0
+R223	Savannah	Callao	2979	10	1	Standard	1423.0
+R224	Vancouver	Durban	10250	29	2	Alternative	2269.0
+R225	Manzanillo	Cape Town	8562	25	1	Alternative	1890.0
+R226	Santos	Lagos	3848	13	1	Standard	1383.0
+R227	Buenos Aires	Mombasa	6341	19	1	Alternative	1704.0
+R228	Callao	Sydney	7737	23	1	Alternative	1900.0
+R229	Durban	Melbourne	5947	18	1	Standard	1729.0
+R230	Cape Town	Auckland	7119	21	1	Alternative	1899.0
+R231	Lagos	Chennai	5098	16	1	Alternative	1456.0
+R232	Mombasa	Mumbai	2685	9	1	Standard	1214.0
+R233	Sydney	Nhava Sheva	6134	18	1	Alternative	1645.0
+R234	Melbourne	Kolkata	5409	17	1	Alternative	1597.0
+R235	Auckland	Visakhapatnam	6839	20	1	Standard	1796.0
+R236	Chennai	Port Klang	1560	7	0	Alternative	1004.0
+R237	Mumbai	Tanjung Pelepas	2343	9	0	Alternative	1129.0
+R238	Nhava Sheva	Jakarta	2809	10	0	Standard	973.0
+R239	Kolkata	Laem Chabang	1023	5	0	Alternative	803.0
+R240	Visakhapatnam	Ho Chi Minh City	1598	7	0	Alternative	904.0
+R241	Singapore	Manila	1451	6	0	Standard	922.0
+R242	Port Klang	Hong Kong	1543	7	0	Alternative	967.0
+R243	Tanjung Pelepas	Yantian	1588	7	0	Alternative	1008.0
+R244	Jakarta	Shanghai	2680	9	0	Standard	1168.0
+R245	Laem Chabang	Ningbo	1710	7	0	Alternative	847.0
+R246	Ho Chi Minh City	Qingdao	1894	7	0	Alternative	903.0
+R247	Manila	Busan	1462	6	0	Standard	888.0
+R248	Hong Kong	Tokyo	1733	7	0	Alternative	954.0
+R249	Yantian	Kaohsiung	374	3	0	Alternative	833.0
+R250	Shanghai	Jebel Ali	3906	13	1	Standard	1494.0
+R251	Ningbo	Dammam	4172	13	1	Alternative	1560.0
+R252	Qingdao	Colombo	3166	11	0	Alternative	1014.0
+R253	Busan	Suez	5248	16	1	Standard	1509.0
+R254	Tokyo	Rotterdam	5665	17	1	Alternative	1591.0
+R255	Kaohsiung	Hamburg	5592	17	1	Alternative	1618.0
+R256	Jebel Ali	Antwerp	3121	11	1	Standard	1369.0
+R257	Dammam	Felixstowe	2986	10	1	Alternative	1388.0
+R258	Colombo	Barcelona	5124	16	1	Alternative	1669.0
+R259	Suez	Genoa	1584	7	1	Standard	1052.0
+R260	Rotterdam	Piraeus	1302	6	0	Alternative	835.0
+R261	Hamburg	Los Angeles	5508	17	1	Alternative	1573.0
+R262	Antwerp	Long Beach	5463	17	1	Standard	1603.0
+R263	Felixstowe	New York	3418	11	1	Alternative	1403.0
+R264	Barcelona	Savannah	4358	14	1	Alternative	1546.0
+R265	Genoa	Vancouver	5205	16	1	Standard	1679.0
+R266	Piraeus	Manzanillo	7057	21	1	Alternative	1682.0
+R267	Los Angeles	Santos	6013	18	1	Alternative	1596.0
+R268	Long Beach	Buenos Aires	5943	18	1	Standard	1623.0
+R269	New York	Callao	3552	12	1	Alternative	1383.0
+R270	Savannah	Durban	8255	24	1	Alternative	1959.0
+R271	Vancouver	Cape Town	9944	28	2	Standard	2409.0
+R272	Manzanillo	Lagos	7021	21	1	Alternative	1887.0
+R273	Santos	Mombasa	5696	17	1	Alternative	1525.0
+R274	Buenos Aires	Sydney	7137	21	1	Standard	1726.0
+R275	Callao	Melbourne	7830	23	1	Alternative	1840.0
+R276	Durban	Auckland	7070	21	1	Alternative	1788.0
+R277	Cape Town	Chennai	5059	16	1	Standard	1592.0
+R278	Lagos	Mumbai	4607	14	1	Alternative	1575.0
+R279	Mombasa	Nhava Sheva	2691	10	1	Alternative	1389.0
+R280	Sydney	Kolkata	5526	17	1	Standard	1505.0
+R281	Melbourne	Visakhapatnam	5394	17	1	Alternative	1525.0
+R282	Auckland	Singapore	5086	16	1	Alternative	1525.0
+R283	Chennai	Tanjung Pelepas	1739	7	0	Standard	955.0
+R284	Mumbai	Jakarta	2815	10	0	Alternative	1114.0
+R285	Nhava Sheva	Laem Chabang	1845	7	0	Alternative	1037.0
+R286	Kolkata	Ho Chi Minh City	1420	6	0	Standard	1023.0
+R287	Visakhapatnam	Manila	2444	9	0	Alternative	931.0
+R288	Singapore	Hong Kong	1569	7	0	Alternative	865.0
+R289	Port Klang	Yantian	1560	7	0	Standard	899.0
+R290	Tanjung Pelepas	Shanghai	2309	9	0	Alternative	1021.0
+R291	Jakarta	Ningbo	2598	9	0	Alternative	1089.0
+R292	Laem Chabang	Qingdao	1943	8	0	Standard	1048.0
+R293	Ho Chi Minh City	Busan	2131	8	0	Alternative	1105.0
+R294	Manila	Tokyo	1797	7	0	Alternative	857.0
+R295	Hong Kong	Kaohsiung	382	3	0	Standard	729.0
+R296	Yantian	Jebel Ali	3620	12	1	Alternative	1356.0
+R297	Shanghai	Dammam	4143	13	1	Alternative	1451.0
+R298	Ningbo	Colombo	3049	10	0	Standard	1141.0
+R299	Qingdao	Suez	4795	15	1	Alternative	1596.0
+R300	Busan	Rotterdam	5408	17	1	Alternative	1702.0
+R301	Tokyo	Hamburg	5442	17	1	Standard	1496.0
+R302	Kaohsiung	Antwerp	5869	18	1	Alternative	1580.0
+R303	Jebel Ali	Felixstowe	3257	11	1	Alternative	1315.0
+R304	Dammam	Barcelona	2817	10	1	Standard	1299.0
+R305	Colombo	Genoa	4812	15	1	Alternative	1563.0
+R306	Suez	Piraeus	730	4	1	Alternative	1129.0
+R307	Rotterdam	Los Angeles	5434	17	1	Standard	1705.0
+R308	Hamburg	Long Beach	5505	17	1	Alternative	1503.0
+R309	Antwerp	New York	3555	12	1	Alternative	1314.0
+R310	Felixstowe	Savannah	4092	13	1	Standard	1411.0
+R311	Barcelona	Vancouver	5204	16	1	Alternative	1573.0
+R312	Genoa	Manzanillo	6200	19	1	Alternative	1723.0
+R313	Piraeus	Santos	6064	18	1	Standard	1742.0
+R314	Los Angeles	Buenos Aires	5944	18	1	Alternative	1764.0
+R315	Long Beach	Callao	4050	13	1	Alternative	1336.0
+R316	New York	Durban	8048	23	1	Standard	1831.0
+R317	Savannah	Cape Town	7691	23	1	Alternative	1824.0
+R318	Vancouver	Lagos	7228	21	1	Alternative	1806.0
+R319	Manzanillo	Mombasa	9534	27	2	Standard	2326.0
+R320	Santos	Sydney	8057	23	1	Alternative	1972.0
+R321	Buenos Aires	Melbourne	7021	21	1	Alternative	1887.0
+R322	Callao	Auckland	6508	19	1	Standard	1618.0
+R323	Durban	Chennai	4302	14	1	Alternative	1400.0
+R324	Cape Town	Mumbai	4976	15	1	Alternative	1512.0
+R325	Lagos	Nhava Sheva	4614	15	1	Standard	1506.0
+R326	Mombasa	Kolkata	3664	12	1	Alternative	1431.0
+R327	Sydney	Visakhapatnam	5561	17	1	Alternative	1685.0
+R328	Melbourne	Singapore	3662	12	1	Standard	1501.0
+R329	Auckland	Port Klang	5286	16	1	Alternative	1478.0
+R330	Chennai	Jakarta	2196	8	0	Alternative	938.0
+R331	Mumbai	Laem Chabang	1853	7	0	Standard	933.0
+R332	Nhava Sheva	Ho Chi Minh City	2257	8	0	Alternative	1015.0
+R333	Kolkata	Manila	2142	8	0	Alternative	1036.0
+R334	Visakhapatnam	Hong Kong	1977	8	0	Standard	1052.0
+R335	Singapore	Yantian	1587	7	0	Alternative	1043.0
+R336	Port Klang	Shanghai	2285	8	0	Alternative	913.0
+R337	Tanjung Pelepas	Ningbo	2235	8	0	Standard	942.0
+R338	Jakarta	Qingdao	2961	10	0	Alternative	1061.0
+R339	Laem Chabang	Busan	2260	8	0	Alternative	1015.0
+R340	Ho Chi Minh City	Tokyo	2604	9	0	Standard	1089.0
+R341	Manila	Kaohsiung	542	4	0	Alternative	887.0
+R342	Hong Kong	Jebel Ali	3619	12	1	Alternative	1496.0
+R343	Yantian	Dammam	3895	13	1	Standard	1318.0
+R344	Shanghai	Colombo	3080	11	0	Alternative	1039.0
+R345	Ningbo	Suez	5031	16	1	Alternative	1519.0
+R346	Qingdao	Rotterdam	5096	16	1	Standard	1561.0
+R347	Busan	Hamburg	5171	16	1	Alternative	1605.0
+R348	Tokyo	Antwerp	5706	17	1	Alternative	1701.0
+R349	Kaohsiung	Felixstowe	5945	18	1	Standard	1764.0
+R350	Jebel Ali	Barcelona	3119	11	1	Alternative	1229.0
+R351	Dammam	Genoa	2523	9	1	Alternative	1195.0
+R352	Colombo	Piraeus	3992	13	1	Standard	1399.0
+R353	Suez	Los Angeles	7436	22	1	Alternative	1830.0
+R354	Rotterdam	Long Beach	5431	17	1	Alternative	1635.0
+R355	Hamburg	New York	3708	12	1	Standard	1471.0
+R356	Antwerp	Savannah	4229	14	1	Alternative	1566.0
+R357	Felixstowe	Vancouver	4594	14	1	Alternative	1398.0
+R358	Barcelona	Manzanillo	5996	18	1	Standard	1595.0
+R359	Genoa	Santos	5714	17	1	Alternative	1597.0
+R360	Piraeus	Buenos Aires	7062	21	1	Alternative	1787.0
+R361	Los Angeles	Callao	4051	13	1	Standard	1476.0
+R362	Long Beach	Durban	10333	29	2	Alternative	2453.0
+R363	New York	Cape Town	7598	22	1	Alternative	1954.0
+R364	Savannah	Lagos	5508	17	1	Standard	1503.0
+R365	Vancouver	Mombasa	8907	26	1	Alternative	1929.0
+R366	Manzanillo	Sydney	7546	22	1	Alternative	1808.0
+R367	Santos	Melbourne	7889	23	1	Standard	1882.0
+R368	Buenos Aires	Auckland	6262	19	1	Alternative	1730.0
+R369	Callao	Chennai	10619	30	2	Alternative	2486.0
+R370	Durban	Mumbai	4255	14	1	Standard	1569.0
+R371	Cape Town	Nhava Sheva	4982	15	1	Alternative	1443.0
+R372	Lagos	Kolkata	5575	17	1	Alternative	1546.0
+R373	Mombasa	Visakhapatnam	3237	11	1	Standard	1312.0
+R374	Sydney	Singapore	3810	12	1	Alternative	1413.0
+R375	Melbourne	Port Klang	3856	13	1	Alternative	1453.0
+R376	Auckland	Tanjung Pelepas	5105	16	1	Standard	1632.0
+R377	Chennai	Laem Chabang	1350	6	0	Alternative	1015.0
+R378	Mumbai	Ho Chi Minh City	2264	8	0	Alternative	910.0
+R379	Nhava Sheva	Manila	3097	11	0	Standard	1041.0
+R380	Kolkata	Hong Kong	1602	7	0	Alternative	904.0
+R381	Visakhapatnam	Yantian	1984	8	0	Alternative	983.0
+R382	Singapore	Shanghai	2307	9	0	Standard	1055.0
+R383	Port Klang	Ningbo	2216	8	0	Alternative	1080.0
+R384	Tanjung Pelepas	Qingdao	2559	9	0	Alternative	1154.0
+R385	Jakarta	Busan	3106	11	0	Standard	1007.0
+R386	Laem Chabang	Tokyo	2784	10	0	Alternative	1005.0
+R387	Ho Chi Minh City	Kaohsiung	1183	6	0	Alternative	856.0
+R388	Manila	Jebel Ali	4194	13	1	Standard	1457.0
+R389	Hong Kong	Dammam	3894	13	1	Alternative	1458.0
+R390	Yantian	Colombo	2463	9	0	Alternative	1108.0
+R391	Shanghai	Suez	4987	15	1	Standard	1654.0
+R392	Ningbo	Rotterdam	5477	17	1	Alternative	1500.0
+R393	Qingdao	Hamburg	4853	15	1	Alternative	1463.0
+R394	Busan	Antwerp	5445	17	1	Standard	1566.0
+R395	Tokyo	Felixstowe	5736	17	1	Alternative	1635.0
+R396	Kaohsiung	Barcelona	6330	19	1	Alternative	1738.0
+R397	Jebel Ali	Genoa	2815	10	1	Standard	1369.0
+R398	Dammam	Piraeus	1684	7	1	Alternative	1274.0
+R399	Colombo	Los Angeles	9135	26	2	Alternative	2141.0
+R400	Suez	Long Beach	7434	22	1	Standard	1760.0
+R401	Rotterdam	New York	3541	12	1	Alternative	1347.0
+R402	Hamburg	Savannah	4392	14	1	Alternative	1480.0
+R403	Antwerp	Vancouver	4707	15	1	Standard	1551.0
+R404	Felixstowe	Manzanillo	5667	17	1	Alternative	1697.0
+R405	Barcelona	Santos	5332	16	1	Alternative	1693.0
+R406	Genoa	Buenos Aires	6713	20	1	Standard	1642.0
+R407	Piraeus	Callao	7115	21	1	Alternative	1723.0
+R408	Los Angeles	Durban	10337	29	2	Alternative	2349.0
+R409	Long Beach	Cape Town	9701	28	2	Standard	2311.0
+R410	New York	Lagos	5127	16	1	Alternative	1600.0
+R411	Savannah	Mombasa	7936	23	1	Alternative	1958.0
+R412	Vancouver	Sydney	7560	22	1	Standard	1949.0
+R413	Manzanillo	Melbourne	7913	23	1	Alternative	1780.0
+R414	Santos	Auckland	7256	21	1	Alternative	1739.0
+R415	Buenos Aires	Chennai	9207	26	2	Standard	2219.0
+R416	Callao	Mumbai	10106	29	2	Alternative	2357.0
+R417	Durban	Nhava Sheva	4260	14	1	Alternative	1500.0
+R418	Cape Town	Kolkata	5865	18	1	Standard	1719.0
+R419	Lagos	Visakhapatnam	5271	16	1	Alternative	1686.0
+R420	Mombasa	Singapore	4326	14	1	Alternative	1367.0
+R421	Sydney	Port Klang	4008	13	1	Standard	1366.0
+R422	Melbourne	Tanjung Pelepas	3679	12	1	Alternative	1363.0
+R423	Auckland	Jakarta	4619	15	1	Alternative	1506.0
+R424	Chennai	Ho Chi Minh City	1745	7	0	Standard	991.0
+R425	Mumbai	Manila	3105	11	0	Alternative	1182.0
+R426	Nhava Sheva	Hong Kong	2596	9	0	Alternative	1159.0
+R427	Kolkata	Yantian	1607	7	0	Standard	835.0
+R428	Visakhapatnam	Shanghai	2497	9	0	Alternative	972.0
+R429	Singapore	Ningbo	2232	8	0	Alternative	977.0
+R430	Port Klang	Qingdao	2517	9	0	Standard	1044.0
+R431	Tanjung Pelepas	Busan	2773	10	0	Alternative	1109.0
+R432	Jakarta	Tokyo	3478	12	0	Alternative	1225.0
+R433	Laem Chabang	Kaohsiung	1396	6	0	Standard	1021.0
+R434	Ho Chi Minh City	Jebel Ali	3420	11	1	Alternative	1263.0
+R435	Manila	Dammam	4483	14	1	Alternative	1421.0
+R436	Hong Kong	Colombo	2451	9	0	Standard	1002.0
+R437	Yantian	Suez	4850	15	1	Alternative	1533.0
+R438	Shanghai	Rotterdam	5399	17	1	Alternative	1631.0
+R439	Ningbo	Hamburg	5232	16	1	Standard	1647.0
+R440	Qingdao	Antwerp	5130	16	1	Alternative	1670.0
+R441	Busan	Felixstowe	5493	17	1	Alternative	1502.0
+R442	Tokyo	Barcelona	6310	19	1	Standard	1631.0
+R443	Kaohsiung	Genoa	5940	18	1	Alternative	1623.0
+R444	Jebel Ali	Piraeus	1987	8	1	Alternative	1204.0
+R445	Dammam	Los Angeles	7990	23	1	Standard	1929.0
+R446	Colombo	Long Beach	9136	26	2	Alternative	2316.0
+R447	Suez	New York	5517	17	1	Alternative	1714.0
+R448	Rotterdam	Savannah	4217	13	1	Standard	1355.0
+R449	Hamburg	Vancouver	4696	15	1	Alternative	1445.0
+R450	Antwerp	Manzanillo	5803	18	1	Alternative	1607.0
+R451	Felixstowe	Santos	5824	18	1	Standard	1645.0
+R452	Barcelona	Buenos Aires	6329	19	1	Alternative	1738.0
+R453	Genoa	Callao	6431	19	1	Alternative	1785.0
+R454	Piraeus	Durban	4583	14	1	Standard	1607.0
+R455	Los Angeles	Cape Town	9704	28	2	Alternative	2206.0
+R456	Long Beach	Lagos	7514	22	1	Alternative	1769.0
+R457	New York	Mombasa	7429	22	1	Standard	1794.0
+R458	Savannah	Sydney	9184	26	2	Alternative	2251.0
+R459	Vancouver	Melbourne	7989	23	1	Alternative	1929.0
+R460	Manzanillo	Auckland	6347	19	1	Standard	1775.0
+R461	Santos	Chennai	8642	25	1	Alternative	2074.0
+R462	Buenos Aires	Mumbai	9025	26	2	Alternative	2128.0
+R463	Callao	Nhava Sheva	10113	29	2	Standard	2288.0
+R464	Durban	Kolkata	5114	16	1	Alternative	1528.0
+R465	Cape Town	Visakhapatnam	5405	17	1	Alternative	1597.0
+R466	Lagos	Singapore	6740	20	1	Standard	1785.0
+R467	Mombasa	Port Klang	4175	13	1	Alternative	1525.0
+R468	Sydney	Tanjung Pelepas	3827	12	1	Alternative	1520.0
+R469	Melbourne	Jakarta	3153	11	1	Standard	1233.0
+R470	Auckland	Laem Chabang	5741	17	1	Alternative	1565.0
+R471	Chennai	Manila	2657	9	0	Alternative	1026.0
+R472	Mumbai	Hong Kong	2603	9	0	Standard	1054.0
+R473	Nhava Sheva	Yantian	2601	9	0	Alternative	1089.0
+R474	Kolkata	Shanghai	2060	8	0	Alternative	1062.0
+R475	Visakhapatnam	Ningbo	2483	9	0	Standard	1146.0
+R476	Singapore	Qingdao	2558	9	0	Alternative	944.0
+R477	Port Klang	Busan	2762	10	0	Alternative	1003.0
+R478	Tanjung Pelepas	Tokyo	3213	11	0	Standard	1089.0
+R479	Jakarta	Kaohsiung	2124	8	0	Alternative	999.0
+R480	Laem Chabang	Jebel Ali	3007	10	1	Alternative	1356.0
+R481	Ho Chi Minh City	Dammam	3727	12	1	Standard	1474.0
+R482	Manila	Colombo	2761	10	0	Alternative	1178.0
+R483	Hong Kong	Suez	4852	15	1	Alternative	1428.0
+R484	Yantian	Rotterdam	5631	17	1	Standard	1553.0
+R485	Shanghai	Hamburg	5154	16	1	Alternative	1533.0
+R486	Ningbo	Antwerp	5509	17	1	Alternative	1609.0
+R487	Qingdao	Felixstowe	5190	16	1	Standard	1607.0
+R488	Busan	Barcelona	6006	18	1	Alternative	1736.0
+R489	Tokyo	Genoa	5951	18	1	Alternative	1764.0
+R490	Kaohsiung	Piraeus	5463	17	1	Standard	1498.0
+R491	Jebel Ali	Los Angeles	8132	24	1	Alternative	1840.0
+R492	Dammam	Long Beach	7989	23	1	Alternative	1859.0
+R493	Colombo	New York	8518	25	1	Standard	1955.0
+R494	Suez	Savannah	6164	19	1	Alternative	1719.0
+R495	Rotterdam	Vancouver	4669	15	1	Alternative	1582.0
+R496	Hamburg	Manzanillo	5931	18	1	Standard	1762.0
+R497	Antwerp	Santos	5876	18	1	Alternative	1546.0
+R498	Felixstowe	Buenos Aires	6795	20	1	Alternative	1686.0
+R499	Barcelona	Callao	6059	18	1	Standard	1637.0
+R500	Genoa	Durban	5175	16	1	Alternative	1570.0
+R501	Chennai	Rotterdam	6420	19	0	Express Direct	2450.0
+R502	Chennai	Rotterdam	6710	24	1	Standard	2180.0
+R503	Chennai	Rotterdam	10850	33	0	Alternative	2320.0
+R504	Shanghai	Los Angeles	5700	12	0	Express Direct	2350.0
+R505	Shanghai	Los Angeles	6120	16	1	Standard	1890.0
+R506	Singapore	Hamburg	8390	21	0	Express Direct	3100.0
+R507	Singapore	Hamburg	8640	27	1	Standard	2450.0
+R508	Colombo	Chennai	385	2	0	Direct Feeder	450.0
+R509	Colombo	Chennai	440	4	1	Alternative	380.0
+R510	Mumbai	Singapore	2410	6	0	Express Direct	950.0
+R511	Jebel Ali	Rotterdam	6180	15	0	Express Direct	2380.0
