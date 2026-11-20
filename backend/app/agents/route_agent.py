@@ -41,6 +41,20 @@ class RouteAgent:
                 "transit_days", "transshipments", "route_type", "base_freight_usd"
             ])
 
+    def get_available_origins(self):
+        """Return sorted list of distinct origin ports in routes dataset."""
+        if "origin" in self.routes.columns:
+            return sorted(self.routes["origin"].dropna().unique().tolist())
+        return []
+
+    def get_available_destinations(self, origin: str):
+        """Return sorted list of available destinations for a specific origin port."""
+        if "origin" in self.routes.columns and "destination" in self.routes.columns:
+            origin_clean = str(origin).strip().lower()
+            filtered = self.routes[self.routes["origin"].str.lower() == origin_clean]
+            return sorted(filtered["destination"].dropna().unique().tolist())
+        return []
+
     def analyze_route(
         self,
         origin,
@@ -127,7 +141,10 @@ class RouteAgent:
                 "route_score": round(
                     float(route["route_score"]),
                     2
-                )
+                ),
+                "transit_score": round(float(route["transit_score"]), 2),
+                "distance_score": round(float(route["distance_score"]), 2),
+                "transshipment_score": round(float(route["transshipment_score"]), 2)
             })
 
         # Step 9: Return recommendation

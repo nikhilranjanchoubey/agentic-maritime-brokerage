@@ -1,44 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import { fetchPorts, fetchPopularRoutes } from './services/api';
+import { fetchPorts } from './services/api';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import SearchCard from './components/SearchCard';
 import RouteResults from './components/RouteResults';
-import PopularRoutes from './components/PopularRoutes';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Services from './components/Services';
-import Footer from './components/Footer';
-import AuthModal from './components/AuthModal';
-import UserDashboard from './components/UserDashboard';
+import WhyChooseUs from './components/WhyChooseUs';
 import AdminDashboard from './components/AdminDashboard';
-import { ShieldCheckIcon } from './components/Icons';
+import ShipperDashboard from './components/ShipperDashboard';
+import AuthPage from './components/AuthPage';
+import AuthModal from './components/AuthModal';
+import ShipmentBookingModal from './components/ShipmentBookingModal';
+import ShipmentTrackingModal from './components/ShipmentTrackingModal';
+import Footer from './components/Footer';
+import UserManual from './components/UserManual';
 import './App.css';
 
 function MainApp() {
-  const { user, isAuthenticated, isAdmin } = useAuth();
-  const [currentView, setCurrentView] = useState('main'); // 'main' or 'dashboard'
+  const { user, isAuthenticated, isAdmin, loading } = useAuth();
+  
+  // Navigation / View state: 'auto', 'manual', 'login', 'register'
+  const [viewState, setViewState] = useState('auto');
+  const [shipperTab, setShipperTab] = useState('home');
   const [ports, setPorts] = useState([]);
-  const [popularRoutes, setPopularRoutes] = useState([]);
+  const [searchResult, setSearchResult] = useState(null);
+
+  // Modals for guest / public search
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState('login');
-  const [searchResult, setSearchResult] = useState(null);
-  const [prefill, setPrefill] = useState({ origin: '', destination: '' });
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [selectedRouteForBooking, setSelectedRouteForBooking] = useState(null);
+  const [trackingModalOpen, setTrackingModalOpen] = useState(false);
+  const [trackingBookingId, setTrackingBookingId] = useState(null);
 
-  // Load ports and popular corridors on mount
   useEffect(() => {
     async function loadData() {
       try {
-        const [portsData, popularData] = await Promise.all([
-          fetchPorts(),
-          fetchPopularRoutes(),
-        ]);
-        setPorts(portsData);
-        setPopularRoutes(popularData);
+        const portsData = await fetchPorts();
+        setPorts(portsData || []);
       } catch (err) {
-        console.error('Error initializing platform data:', err);
+        console.error('Failed to load initial ports:', err);
       }
     }
     loadData();
@@ -49,172 +51,134 @@ function MainApp() {
     setAuthModalOpen(true);
   };
 
-  const handleSelectCorridor = (origin, destination) => {
-    setPrefill({ origin, destination });
-    const searchEl = document.getElementById('search-section');
-    if (searchEl) {
-      searchEl.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (target) => {
+    if (target === 'manual' || target === 'how-it-works') {
+      setViewState('manual');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (target === 'home') {
+      setViewState('auto');
+      setShipperTab('home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (target === 'quotation' || target === 'search') {
+      setViewState('auto');
+      setShipperTab('home');
+      setTimeout(() => {
+        const el = document.getElementById('route-quotation-card') || document.querySelector('.quotation-form');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 50);
+    } else if (target === 'consignments') {
+      if (!isAuthenticated) {
+        handleOpenAuth('login');
+      } else {
+        setViewState('auto');
+        setShipperTab('consignments');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else if (target === 'admin_dashboard') {
+      setViewState('auto');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (target === 'login') {
+      handleOpenAuth('login');
+    } else if (target === 'signup' || target === 'register') {
+      handleOpenAuth('signup');
+    } else {
+      setViewState('auto');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
-  const handleExploreHero = () => {
-    const searchEl = document.getElementById('search-section');
-    if (searchEl) {
-      searchEl.scrollIntoView({ behavior: 'smooth' });
+  const handleBookRoute = (route) => {
+    if (!isAuthenticated) {
+      handleOpenAuth('login');
+    } else {
+      setSelectedRouteForBooking(route);
+      setBookingModalOpen(true);
     }
   };
 
-  const handleDiscoverHero = () => {
-    const featEl = document.getElementById('why-choose-us');
-    if (featEl) {
-      featEl.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleFooterNav = (id) => {
-    setCurrentView('main');
-    setTimeout(() => {
-      const el = document.getElementById(id === 'home' ? 'hero-top' : id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }, 50);
-  };
-
-  // If user requests dashboard or profile but is not signed in
-  if ((currentView === 'dashboard' || currentView === 'profile') && !isAuthenticated) {
+  if (loading) {
     return (
-      <div className="auth-required-screen">
-        <div className="auth-required-card">
-          <div className="auth-req-icon-box">
-            <ShieldCheckIcon size={36} className="auth-req-icon-svg" />
-          </div>
-          <h2 className="auth-req-heading">Authentication Required</h2>
-          <p className="auth-req-desc">
-            Please sign in to access your shipment bookings and broker account.
-          </p>
-          <div className="auth-req-buttons">
-            <button
-              type="button"
-              className="btn-auth-signin"
-              onClick={() => handleOpenAuth('login')}
-            >
-              Sign In Now
-            </button>
-            <button
-              type="button"
-              className="btn-auth-return"
-              onClick={() => setCurrentView('main')}
-            >
-              Return to Homepage
-            </button>
-          </div>
-        </div>
-        <AuthModal
-          isOpen={authModalOpen}
-          initialMode={authModalMode}
-          onClose={() => setAuthModalOpen(false)}
-          onSuccess={() => setCurrentView('dashboard')}
-        />
+      <div className="app-loading-screen">
+        <div className="spinner"></div>
+        <p>Loading SeaRoute Platform...</p>
       </div>
     );
   }
 
-  // Render Admin Dashboard
-  if (currentView === 'admin' && isAdmin) {
+  // 1. Authenticated as Administrator: Render Administrator Panel
+  if (isAuthenticated && isAdmin) {
     return (
-      <AdminDashboard
-        ports={ports}
-        onBackToHome={() => setCurrentView('main')}
-      />
+      <div className="app-layout">
+        <AdminDashboard onBackToHome={() => handleNavClick('home')} />
+        <Footer onNavClick={handleNavClick} onOpenAuth={handleOpenAuth} />
+      </div>
     );
   }
 
-  // Render User Dashboard (Overview / My Shipments) or Profile with SkyTech Layout
-  if (currentView === 'dashboard' || currentView === 'profile') {
+  // 2. How It Works View
+  if (viewState === 'manual') {
     return (
-      <div className="app-container">
+      <div className="app-layout">
         <Navbar
           onOpenAuth={handleOpenAuth}
-          currentView={currentView}
-          setCurrentView={setCurrentView}
+          currentView="how-it-works"
+          onNavClick={handleNavClick}
         />
-        <UserDashboard
-          ports={ports}
-          viewMode={currentView === 'profile' ? 'profile' : 'overview'}
-          onBackToHome={() => setCurrentView('main')}
-          onOpenSearch={() => {
-            setCurrentView('main');
-            setTimeout(() => {
-              const el = document.getElementById('search-section');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 50);
-          }}
+        <UserManual
+          onBackToHome={() => handleNavClick('home')}
+          onOpenAuth={handleOpenAuth}
         />
-        <Footer onNavClick={handleFooterNav} />
+        <Footer
+          onNavClick={handleNavClick}
+          onOpenAuth={handleOpenAuth}
+        />
         <AuthModal
           isOpen={authModalOpen}
           initialMode={authModalMode}
           onClose={() => setAuthModalOpen(false)}
-          onSuccess={() => setCurrentView('dashboard')}
         />
       </div>
     );
   }
 
-  // Render Public Homepage
-  return (
-    <div className="app-container">
-      {/* Sticky Navigation Bar */}
-      <Navbar
-        onOpenAuth={handleOpenAuth}
-        currentView={currentView}
-        setCurrentView={setCurrentView}
-      />
-
-      {/* Hero Section with SkyTech Top Badge, Headline & Spacious 2-Row Search Card */}
-      <HeroSection>
-        <SearchCard
-          ports={ports}
-          prefillOrigin={prefill.origin}
-          prefillDestination={prefill.destination}
-          onResultsFound={(res) => setSearchResult(res)}
+  // 3. Dedicated AuthPage (if explicitly navigated)
+  if (viewState === 'login' || viewState === 'register') {
+    return (
+      <div className="app-layout">
+        <AuthPage
+          initialMode={viewState === 'register' ? 'register' : 'login'}
+          onBrowseRoutes={() => handleNavClick('home')}
         />
-      </HeroSection>
-
-      {/* Route Intelligence Results (Rendered upon search) */}
-      {searchResult && (
-        <RouteResults
-          resultState={searchResult}
-          onReset={() => setSearchResult(null)}
+        <Footer
+          onNavClick={handleNavClick}
           onOpenAuth={handleOpenAuth}
         />
-      )}
+      </div>
+    );
+  }
 
-      {/* Popular Shipping Routes inspired by SkyTech */}
-      <PopularRoutes
-        popularRoutes={popularRoutes}
-        onSelectCorridor={handleSelectCorridor}
+  // 4. Default Home Experience (both for Guests and Authenticated Shippers):
+  // Renders the collegiate Home page with Maritime Freight Quotation & Booking,
+  // Why Choose Us, Platform Features, and My Consignments (protected by login).
+  return (
+    <div className="app-layout">
+      <ShipperDashboard
+        onBackToHome={() => handleNavClick('home')}
+        onOpenAuth={handleOpenAuth}
+        activeTab={shipperTab}
+        setActiveTab={setShipperTab}
+        onNavClick={handleNavClick}
+      />
+      <Footer
+        onNavClick={handleNavClick}
+        onOpenAuth={handleOpenAuth}
       />
 
-      {/* Why Choose Us Features */}
-      <Features />
-
-      {/* How It Works Process */}
-      <HowItWorks />
-
-      {/* Specialized Maritime AI Services */}
-      <Services onExploreRoute={handleExploreHero} />
-
-      {/* Navy Maritime Footer */}
-      <Footer onNavClick={handleFooterNav} />
-
-      {/* Split-screen SkyTech Authentication Modal */}
       <AuthModal
         isOpen={authModalOpen}
         initialMode={authModalMode}
         onClose={() => setAuthModalOpen(false)}
-        onSuccess={() => {
-          setCurrentView('dashboard');
-        }}
       />
     </div>
   );

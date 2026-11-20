@@ -22,7 +22,12 @@ class LoginRequest(BaseModel):
 class RegisterRequest(BaseModel):
     email: str
     password: str
-    full_name: str
+    full_name: Optional[str] = None
+    first_name: Optional[str] = ""
+    surname: Optional[str] = ""
+    mobile_number: Optional[str] = ""
+    address: Optional[str] = ""
+    confirm_password: Optional[str] = None
     role: str = "user"  # Public registration is restricted to 'user'
     company: Optional[str] = ""
 
@@ -56,6 +61,8 @@ class RouteRecordCreate(BaseModel):
 
 
 class RouteRecordUpdate(BaseModel):
+    origin: Optional[str] = None
+    destination: Optional[str] = None
     distance_nm: Optional[int] = None
     transit_days: Optional[int] = None
     transshipments: Optional[int] = None
@@ -74,3 +81,46 @@ class UserProfileUpdateRequest(BaseModel):
 class UserPasswordChangeRequest(BaseModel):
     current_password: str
     new_password: str
+
+
+class AdminUserCreateRequest(BaseModel):
+    full_name: str
+    email: str
+    password: str
+    role: str = "user"  # "user" or "admin"
+    company: Optional[str] = ""
+    status: Optional[str] = "Active"
+
+
+class AdminUserUpdateRequest(BaseModel):
+    full_name: str
+    email: str
+    role: str = "user"
+    company: Optional[str] = ""
+    status: Optional[str] = "Active"
+
+
+class ShipmentBookingRequest(BaseModel):
+    route_id: str
+    origin: str
+    destination: str
+    cargo_desc: str
+    cargo_type: str = "Standard Dry"
+    containers: int = Field(default=1, ge=1)
+    shipper_name: str
+    contact_phone: str
+    pickup_address: str
+    delivery_address: str
+    pickup_date: str
+    transit_days: Optional[int] = 0
+    distance_nm: Optional[int] = 0
+    transshipments: Optional[int] = 0
+    freight_usd: Optional[float] = 0.0
+    intermediate_port: Optional[str] = ""
+
+
+class ShipmentStatusUpdateRequest(BaseModel):
+    status: str
+    remarks: Optional[str] = ""
+    timestamp: Optional[str] = None
+    intermediate_port: Optional[str] = "" 

@@ -40,7 +40,7 @@ export default function Features() {
           <div className="section-badge-pill">
             <span>MARITIME EXCELLENCE</span>
           </div>
-          <h2 className="section-title">Why Ship with Agentic Maritime</h2>
+          <h2 className="section-title">Why Ship with SeaRoute</h2>
           <p className="section-subtitle">
             Commercial-grade voyage intelligence engineered for speed, accuracy, and stronger freight brokerage margins.
           </p>

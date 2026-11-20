@@ -1,75 +1,137 @@
 import React from 'react';
-import { ShipLogo } from './Icons';
+import { useAuth } from '../context/AuthContext';
 
-export default function Footer({ onNavClick }) {
+export default function Footer({ onNavClick, onOpenAuth }) {
+  const { user, isAuthenticated, isAdmin, logout } = useAuth();
+
+  const handleBrandClick = () => {
+    if (onNavClick) onNavClick('home');
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="footer-navy-wrapper" id="contact">
-      <div className="footer-horizon-glow"></div>
-
+    <footer className="footer-full">
       <div className="footer-container">
-        <div className="footer-main-grid">
-          {/* LEFT: Logo & Brand Description */}
+        <div className="footer-columns-grid">
+          {/* Brand & Platform Description */}
           <div className="footer-brand-col">
-            <div className="footer-brand-row">
-              <ShipLogo size={32} className="mr-3 text-cyan" />
-              <div>
-                <span className="footer-brand-name">AGENTIC MARITIME</span>
-                <span className="footer-brand-tagline">BROKERAGE & ROUTE INTELLIGENCE</span>
-              </div>
+            <div
+              className="footer-brand-header"
+              onClick={handleBrandClick}
+              role="button"
+              tabIndex={0}
+              style={{ cursor: 'pointer' }}
+            >
+              <img src="/searoute-logo.jpg" alt="SeaRoute Logo" className="footer-logo-img" />
+              <span className="footer-brand-name">SeaRoute</span>
             </div>
-            <p className="footer-desc">
-              Global AI-powered maritime freight quotation, route optimization, and commercial logistics platform. Empowering cargo brokers, NVOCCs, and forwarders with transparent routing intelligence.
+            <p className="footer-brand-desc">
+              Maritime freight benchmarking, corridor intelligence, and end-to-end consignment milestone tracking platform.
             </p>
-            <div className="footer-meta-pill">
-              <span className="meta-dot"></span>
-              <span>Autonomous Maritime Operations Platform</span>
-            </div>
           </div>
 
-          {/* COLUMN 1: Platform Links */}
+          {/* Quick Links */}
           <div className="footer-links-col">
-            <h4 className="footer-col-title">Platform</h4>
+            <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links-list">
-              <li><button type="button" onClick={() => onNavClick('home')}>Home</button></li>
-              <li><button type="button" onClick={() => onNavClick('route-intelligence')}>Route Intelligence</button></li>
-              <li><button type="button" onClick={() => onNavClick('popular-routes')}>Popular Corridors</button></li>
-              <li><button type="button" onClick={() => onNavClick('why-choose-us')}>Why Ship With Us</button></li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  onClick={() => onNavClick && onNavClick('home')}
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  onClick={() => onNavClick && onNavClick('quotation')}
+                >
+                  Freight Quotation
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  onClick={() => onNavClick && onNavClick('consignments')}
+                >
+                  My Consignment
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  onClick={() => onNavClick && onNavClick('how-it-works')}
+                >
+                  How It Works
+                </button>
+              </li>
             </ul>
           </div>
 
-          {/* COLUMN 2: Services */}
+          {/* Account */}
           <div className="footer-links-col">
-            <h4 className="footer-col-title">Services</h4>
+            <h4 className="footer-col-title">Account</h4>
             <ul className="footer-links-list">
-              <li><button type="button" onClick={() => onNavClick('services')}>Route Intelligence Engine</button></li>
-              <li><button type="button" onClick={() => onNavClick('services')}>Freight Benchmark Estimator</button></li>
-              <li><button type="button" onClick={() => onNavClick('route-intelligence')}>Voyage Multi-Factor Scoring</button></li>
-              <li><button type="button" onClick={() => onNavClick('popular-routes')}>Global Trade Lane Benchmarks</button></li>
-            </ul>
-          </div>
-
-          {/* COLUMN 3: Information & Contact */}
-          <div className="footer-links-col">
-            <h4 className="footer-col-title">Information</h4>
-            <ul className="footer-links-list">
-              <li><button type="button" onClick={() => onNavClick('how-it-works')}>How It Works</button></li>
-              <li><button type="button" onClick={() => onNavClick('contact')}>Commercial Contact</button></li>
-              <li><span className="footer-muted-item">Global Maritime Carrier Directory</span></li>
-              <li><span className="footer-muted-item">Port Congestion Advisories</span></li>
+              {!isAuthenticated ? (
+                <>
+                  <li>
+                    <button
+                      type="button"
+                      className="footer-link-btn"
+                      onClick={() => onOpenAuth && onOpenAuth('login')}
+                    >
+                      Sign In
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="footer-link-btn"
+                      onClick={() => onOpenAuth && onOpenAuth('signup')}
+                    >
+                      Register
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li style={{ fontSize: '13px', color: '#123456', fontWeight: 600 }}>
+                    {isAdmin ? 'Admin' : (user?.full_name || user?.email?.split('@')[0] || 'Shipper')}
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="footer-link-btn"
+                      onClick={() => onNavClick && onNavClick(isAdmin ? 'admin_dashboard' : 'consignments')}
+                    >
+                      {isAdmin ? 'Operational Dashboard' : 'Track Consignments'}
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="footer-link-btn"
+                      onClick={logout}
+                    >
+                      Sign Out
+                    </button>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
 
-        {/* BOTTOM: Copyright & Professional Tagline */}
-        <div className="footer-bottom-bar">
-          <div className="footer-copy">
-            Copyright © 2026 Agentic Maritime. All rights reserved.
-          </div>
-          <div className="footer-legal">
-            <span>Maritime Logistics Intelligence</span>
-            <span className="sep">•</span>
-            <span>Commercial Freight Routing</span>
-          </div>
+        {/* Copyright */}
+        <div className="footer-bottom-row">
+          <p className="footer-copyright-text">
+            © 2026 SeaRoute. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

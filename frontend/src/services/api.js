@@ -72,11 +72,26 @@ export async function loginUser(email, password) {
   return data;
 }
 
-export async function registerUser({ email, password, full_name, company = '' }) {
+export async function fetchRouteOrigins() {
+  const res = await fetch(`${API_BASE_URL}/routes/origins`);
+  if (!res.ok) throw new Error('Failed to load route origins');
+  const data = await res.json();
+  return data.origins || [];
+}
+
+export async function fetchRouteDestinations(origin) {
+  if (!origin) return [];
+  const res = await fetch(`${API_BASE_URL}/routes/destinations?origin=${encodeURIComponent(origin)}`);
+  if (!res.ok) throw new Error('Failed to load route destinations');
+  const data = await res.json();
+  return data.destinations || [];
+}
+
+export async function registerUser(userData) {
   const res = await fetch(`${API_BASE_URL}/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password, full_name, role: 'user', company }),
+    body: JSON.stringify(userData),
   });
   const data = await res.json();
   if (!res.ok) {
@@ -172,6 +187,48 @@ export async function fetchAdminUsers() {
   return data.users || [];
 }
 
+export async function createAdminUser(userData) {
+  const res = await fetch(`${API_BASE_URL}/admin/users`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(userData),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to create user');
+  return data;
+}
+
+export async function updateAdminUser(userId, userData) {
+  const res = await fetch(`${API_BASE_URL}/admin/users/${userId}`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(userData),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to update user');
+  return data;
+}
+
+export async function toggleAdminUserStatus(userId) {
+  const res = await fetch(`${API_BASE_URL}/admin/users/${userId}/status`, {
+    method: 'PUT',
+    headers: getAuthHeaders(),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to toggle status');
+  return data;
+}
+
+export async function deleteAdminUser(userId) {
+  const res = await fetch(`${API_BASE_URL}/admin/users/${userId}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders(),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to delete user');
+  return data;
+}
+
 export async function fetchAdminActivity() {
   const res = await fetch(`${API_BASE_URL}/admin/activity`, {
     headers: getAuthHeaders(),
@@ -226,4 +283,133 @@ export async function deleteAdminRoute(routeId) {
   const data = await res.json();
   if (!res.ok) throw new Error(data.detail || 'Failed to delete route');
   return data;
+}
+
+// Shipment Booking & Tracking APIs
+export async function createShipmentBooking(bookingData) {
+  const res = await fetch(`${API_BASE_URL}/shipments/book`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(bookingData),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Shipment booking failed');
+  return data;
+}
+
+export async function fetchUserBookings() {
+  const res = await fetch(`${API_BASE_URL}/shipments/my-bookings`, {
+    headers: getAuthHeaders(),
+  });
+  if (!res.ok) throw new Error('Failed to fetch bookings');
+  const data = await res.json();
+  return data.bookings || [];
+}
+
+export async function fetchShipmentDetails(bookingId) {
+  const res = await fetch(`${API_BASE_URL}/shipments/${encodeURIComponent(bookingId)}`, {
+    headers: getAuthHeaders(),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to fetch shipment details');
+  return data;
+}
+
+export async function fetchAdminShipments({
+  search = '',
+  status = 'All',
+  booking_status = 'All',
+  dispatch_status = 'All'
+} = {}) {
+  const params = new URLSearchParams();
+  if (search) params.append('search', search);
+  if (booking_status && booking_status !== 'All') params.append('booking_status', booking_status);
+  if (dispatch_status && dispatch_status !== 'All') params.append('dispatch_status', dispatch_status);
+  if (status && status !== 'All' && !params.has('booking_status') && !params.has('dispatch_status')) {
+    params.append('status', status);
+  }
+
+  const url = `${API_BASE_URL}/admin/shipments${params.toString() ? `?${params.toString()}` : ''}`;
+  const res = await fetch(url, {
+    headers: getAuthHeaders(),
+  });
+  if (!res.ok) throw new Error('Failed to fetch admin shipments');
+  const data = await res.json();
+  return data.bookings || [];
+}
+
+export async function fetchPendingAdminShipments() {
+  const res = await fetch(`${API_BASE_URL}/admin/shipments/pending`, {
+    headers: getAuthHeaders(),
+  });
+  if (!res.ok) throw new Error('Failed to fetch pending shipments');
+  const data = await res.json();
+  return data.pending_shipments || [];
+}
+
+export async function approveAdminShipment(bookingId) {
+  const res = await fetch(`${API_BASE_URL}/admin/shipments/${encodeURIComponent(bookingId)}/approve`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to approve shipment');
+  return data;
+}
+
+export async function rejectAdminShipment(bookingId, reason = '') {
+  const res = await fetch(`${API_BASE_URL}/admin/shipments/${encodeURIComponent(bookingId)}/reject`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ reason }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to reject shipment');
+  return data;
+}
+
+export async function updateAdminShipmentStatus(bookingId, updateData) {
+  const res = await fetch(`${API_BASE_URL}/admin/shipments/${encodeURIComponent(bookingId)}/update-status`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify(updateData),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to update shipment status');
+  return data;
+}
+
+export async function cancelAdminShipment(bookingId, reason = '') {
+  const res = await fetch(`${API_BASE_URL}/admin/shipments/${encodeURIComponent(bookingId)}/cancel`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({ reason }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to cancel shipment');
+  return data;
+}
+
+export async function deleteAdminShipment(bookingId) {
+  const res = await fetch(`${API_BASE_URL}/admin/shipments/${encodeURIComponent(bookingId)}`, {
+    method: 'DELETE',
+    headers: getAuthHeaders(),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to delete shipment');
+  return data;
+}
+
+export async function cancelUserShipment(bookingId) {
+  const res = await fetch(`${API_BASE_URL}/shipments/${encodeURIComponent(bookingId)}/cancel`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.detail || 'Failed to cancel consignment');
+  return data;
+}
+
+export async function deleteUserShipment(bookingId) {
+  return cancelUserShipment(bookingId);
 }
